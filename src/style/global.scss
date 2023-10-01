@@ -1,0 +1,57 @@
+@import './fonts/fonts.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font-main: 'PixelifySans-Regular', sans-serif;
+    --font-main--bold: 'PixelifySans-Bold', sans-serif;
+	--font-secondary: 'TitilliumWeb-Regular', sans-serif;
+	--font-secondary--bold: 'TitilliumWeb-Bold', sans-serif;
+
+    --header-height: 120px;
+
+    --grey-dark: #2E3336;
+    --green-light: #81e4aa;
+}
+
+
+
+html {
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+a {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+    &::hover,
+    &::visited {
+        color: initial;
+    }
+
+    &[disabled] {
+        pointer-events: none;
+        color: gray;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
