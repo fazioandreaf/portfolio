@@ -1,0 +1,39 @@
+header {
+  height: var(--header-height);
+  display: flex;
+  padding: 20px;
+  position: sticky;
+  inset-block-start: 0;
+  inset-inline: 0;
+  background-color: var(--grey-dark);
+
+  .logo {
+    flex: 0 1 30%;
+    align-self: center;
+
+    span {
+      font-family: var(--font-secondary);
+      font-size: 32px;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+
+      &:nth-child(2n - 1) {
+        color: var(--green-light);
+      }
+    }
+  }
+
+  nav {
+    flex: 0 1 70%;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      height: 100%;
+    }
+  }
+}

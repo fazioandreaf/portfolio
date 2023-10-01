@@ -1,0 +1,49 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: calc(100vh - var(--header-height));
+  background: var(--grey-dark);
+  background: linear-gradient(0deg, var(--grey-dark) 0%, var(--grey-dark) 90%, #5a6267 100%);
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.material-symbols-outlined {
+  animation: logo-spin infinite 1.5s linear;
+}
+
+
+.linkedin-link {
+  display: inline-block;
+
+  .wrapper-linkedin-logo {
+    display: inline-block;
+    transform: translateY(5px);
+
+    div {
+      display: flex;
+    }
+  }
+
+  svg {
+    fill: white;
+  }
+
+  &:hover svg {
+    fill: var(--green-light);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
