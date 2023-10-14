@@ -17,10 +17,10 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <a href="/Contact" disabled>Contact</a>
+              <a href="/contact" >Contact</a>
             </li>
             <li>
-              <a href="/about-me" disabled>About Me</a>
+              <a href="/about-me">About Me</a>
             </li>
           </ul>
         </nav>
