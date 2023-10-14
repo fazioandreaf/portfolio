@@ -1,0 +1,26 @@
+.loaded-grid {
+  transition: all 1s ease-in-out;
+
+  &:hover .highlighted-span::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .highlighted-span {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: blue;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+      mix-blend-mode: color;
+    }
+  }
+}

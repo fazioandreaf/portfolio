@@ -108,6 +108,8 @@
   },
   "include": [
     "src/**/*.ts",
-    "assets/*.svg",
+  ],
+  "exclude": [
+    "C:/Users/AndreaFazio/Desktop/Github/portfolio/src/assets/ln-account.png",
   ]
 }
