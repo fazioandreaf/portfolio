@@ -1,38 +1,43 @@
 header {
-  height: var(--header-height);
-  display: flex;
-  padding: 20px;
-  position: sticky;
-  inset-block-start: 0;
-  inset-inline: 0;
-  background-color: var(--grey-dark);
+	height: var(--header-height);
+	display: flex;
+	padding: 20px;
+	position: sticky;
+	inset-block-start: 0;
+	inset-inline: 0;
+	background-color: var(--grey-dark);
+	border-bottom: 4px solid var(--green-light);
 
-  .logo {
-    flex: 0 1 30%;
-    align-self: center;
+	.logo {
+		flex: 0 1 30%;
+		align-self: center;
 
-    span {
-      font-size: 32px;
+		a:after {
+			display: none;
+		}
 
-      @media (max-width: 768px) {
-        font-size: 20px;
-      }
+		span {
+			font-size: 32px;
 
-      &:nth-child(2n - 1) {
-        color: var(--green-light);
-      }
-    }
-  }
+			@media (max-width: 768px) {
+				font-size: 20px;
+			}
 
-  nav {
-    flex: 0 1 70%;
+			&:nth-child(2n - 1) {
+				color: var(--green-light);
+			}
+		}
+	}
 
-    ul {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 20px;
-      height: 100%;
-    }
-  }
+	nav {
+		flex: 0 1 70%;
+
+		ul {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 20px;
+			height: 100%;
+		}
+	}
 }

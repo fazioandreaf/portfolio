@@ -2,70 +2,65 @@
 @import './mixins';
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 :root {
-    --font-secondary: 'PixelifySans-Regular', sans-serif;
-    --font-secondary--bold: 'PixelifySans-Bold', sans-serif;
+	--font-secondary: 'PixelifySans-Regular', sans-serif;
+	--font-secondary--bold: 'PixelifySans-Bold', sans-serif;
 	--font-main: 'TitilliumWeb-Regular', sans-serif;
 	--font-main--bold: 'TitilliumWeb-Bold', sans-serif;
 
-    --header-height: 120px;
+	--header-height: 120px;
 
-    --grey-dark: #1b1f22;
-    --green-light: #81e4aa;
+	--grey-dark: #1b1f22;
+	--green-light: #81e4aa;
 }
 
-
-
 html {
-    font-family: var(--font-main);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-family: var(--font-main);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body,
 a {
-    color: white;
+	color: white;
 }
 
 ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-
-
 a {
-    @include underline;
+	@include underline;
 
-    text-decoration: none;
-    color: white;
+	text-decoration: none;
+	color: white;
 
-    &::hover,
-    &::visited {
-        color: initial;
-    }
+	&::hover,
+	&::visited {
+		color: initial;
+	}
 
-    &[disabled] {
-        pointer-events: none;
-        color: gray;
-    }
+	&[disabled] {
+		pointer-events: none;
+		color: gray;
+	}
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
 }
