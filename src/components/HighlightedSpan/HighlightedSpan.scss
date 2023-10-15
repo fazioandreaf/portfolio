@@ -1,6 +1,4 @@
-.loaded-grid {
-  transition: all 1s ease-in-out;
-
+.main-grid {
   &:hover .highlighted-span::after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -9,14 +7,23 @@
     position: relative;
     display: inline-block;
 
+    &[data-color="green"]::after {
+      background-color: green;
+    }
+    &[data-color="blue"]::after {
+      background-color: blue;
+    }
+    &[data-color="red"]::after {
+      background-color: red;
+    }
+
     &::after {
       content: '';
       position: absolute;
       height: 100%;
       width: 100%;
-      top: 0;
-      left: 0;
-      background-color: blue;
+      inset-block-start: 0;
+      inset-inline-start: 0;
       transform: scaleX(0);
       transform-origin: bottom right;
       transition: transform 0.3s ease-in-out;
