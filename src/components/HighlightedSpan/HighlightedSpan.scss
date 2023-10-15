@@ -1,0 +1,33 @@
+.main-grid {
+  &:hover .highlighted-span::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .highlighted-span {
+    position: relative;
+    display: inline-block;
+
+    &[data-color="green"]::after {
+      background-color: green;
+    }
+    &[data-color="blue"]::after {
+      background-color: blue;
+    }
+    &[data-color="red"]::after {
+      background-color: red;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+      mix-blend-mode: color;
+    }
+  }
+}

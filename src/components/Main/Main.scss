@@ -11,39 +11,61 @@ main {
   @media (min-width: 768px) {
     font-size: 24px;
   }
-}
 
-.material-symbols-outlined {
-  animation: logo-spin infinite 1.5s linear;
-}
+  .main-grid {
+    display: flex;
+    align-items: center;
 
-
-.linkedin-link {
-  display: inline-block;
-
-  .wrapper-linkedin-logo {
-    display: inline-block;
-    transform: translateY(5px);
-
-    div {
-      display: flex;
+    @media (max-width: 512px) {
+      flex-direction: column;
     }
   }
 
-  svg {
-    fill: white;
+  span {
+    display: inline-block;
   }
 
-  &:hover svg {
-    fill: var(--green-light);
+  div.profile-wrapper {
+  position: relative;
+  width: 50%;
+  flex: 0 0 25%;
+  padding: 20px 20px 0 0px;
+  overflow: hidden;
+  
+  
+  @media (max-width: 512px) {
+    flex: 1;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(0deg, white 0%, var(--green-light) 100%);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 100%;
+    z-index: 1;
+    transform: translate(0, -10px);
+    animation: fade-in 0.8s ease-in-out;
+
+  }
+
+   img {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    animation: fade-in 0.8s ease-in-out 0.35s;
   }
 }
+}
 
-@keyframes logo-spin {
+@keyframes fade-in {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
+
   to {
-    transform: rotate(-360deg);
+    opacity: 1;
   }
 }
