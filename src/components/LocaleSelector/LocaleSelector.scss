@@ -1,0 +1,27 @@
+.locale-selector {
+    display: flex;
+    flex: row nowrap;
+    gap: 5px;
+
+    span {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            text-decoration: underline;
+            inset-block-start: -2px;
+            inset-inline-start: 50%;
+            width: 0;
+            height: 0;
+            transform: translate(-50%, 0);
+            background-color: var(--green-light);
+            border-radius: 50%;
+            transition: 0.3s all ease-in-out;
+        }
+    }
+
+    .active:after {
+        width: 5px;
+        height: 5px;
+    }
+}

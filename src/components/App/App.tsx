@@ -1,22 +1,20 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react';
 
-import { Main, Header } from '../index'
-import { photoASCII } from '../../constants.js'
+import {Main, Header} from '../index';
+import {photoASCII} from '../../constants.js';
 
-import './App.scss'
+import './App.scss';
 
-function App () {
-  // Easter egg;
-  useEffect(() =>
-    console.log(photoASCII)
-  , [])
+function App() {
+	// Easter egg;
+	useEffect(() => console.log(photoASCII), []);
 
-  return (
-    <div>
-      <Header />
-      <Main />
-    </div>
-  )
+	return (
+		<div>
+			<Header />
+			<Main />
+		</div>
+	);
 }
 
-export default App
+export default App;

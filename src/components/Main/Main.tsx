@@ -1,18 +1,20 @@
 import React, {useMemo} from 'react';
 import {useLocation} from 'react-router-dom';
 import {Outlet} from 'react-router-dom';
+import {useIntl} from 'react-intl';
+
+import HighlightedSpan from './../HighlightedSpan';
+import Grid from './../Grid';
 
 import './Main.scss';
 
-import HighlightedSpan from './../HighlightedSpan';
-
-import Grid from './../Grid';
+import messages from './messages';
 
 const Main = () => {
+	const intl = useIntl();
 	const location = useLocation();
 	const isHomepage = useMemo(() => location.pathname === '/', [location.pathname]);
 
-	console.log(location);
 	return (
 		<main>
 			{!isHomepage ? (
@@ -22,14 +24,12 @@ const Main = () => {
 					<div>
 						<p>
 							<span>
-								In addition to being a <HighlightedSpan color="green">developer</HighlightedSpan>, I am
-								also an <HighlightedSpan color="blue">engineer</HighlightedSpan>.
+								{intl.formatMessage(messages.firstPhrase, {
+									firstSpan: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
+									secondSpan: (chunk: any) => <HighlightedSpan color="blue">{chunk}</HighlightedSpan>,
+								})}
 							</span>
-							<span>
-								Since high school there has been a strong passion for computer science and technology
-								with a clear goal in mind: to maximize the potential of the tools at hand and improve
-								processes.
-							</span>
+							<span>{intl.formatMessage(messages.secondPhrase)}</span>
 						</p>
 					</div>
 					<div className="profile-wrapper">

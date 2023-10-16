@@ -1,7 +1,7 @@
 import {ReactNode} from 'react';
 
 export interface IGridProps {
-    children: ReactNode;
-    gridSize?: number;
-    classNames?: string;
+	children: ReactNode;
+	gridSize?: number;
+	classNames?: string;
 }

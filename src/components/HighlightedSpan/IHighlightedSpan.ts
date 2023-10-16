@@ -1,6 +1,6 @@
 import {ReactNode} from 'react';
 
 export interface IHighlightedSpanProps {
-    children: ReactNode;
-    color?: string;
+	children: ReactNode;
+	color?: string;
 }

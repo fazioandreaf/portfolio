@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+
+import Navigation from './../Navigation';
 
 import './Header.scss';
 
@@ -15,26 +16,7 @@ const Header = () => {
 				</a>
 				<h1 style={{display: 'none'}}>fazioandrea.me</h1>
 			</div>
-			<nav>
-				<ul>
-					<li>
-						<NavLink
-							to="/contact"
-							className={({isActive, isPending}) => (isPending ? 'pending' : isActive ? 'active' : '')}
-						>
-							Contact
-						</NavLink>
-					</li>
-					<li>
-						<NavLink
-							to="/about-me"
-							className={({isActive, isPending}) => (isPending ? 'pending' : isActive ? 'active' : '')}
-						>
-							About Me
-						</NavLink>
-					</li>
-				</ul>
-			</nav>
+			<Navigation />
 		</header>
 	);
 };
