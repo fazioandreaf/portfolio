@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {App, Contacts, ErrorContent, AboutMe} from './components';
+import {App, Contacts, Maintenance, AboutMe} from './components';
 
 const routes = [
 	{
 		path: '/',
 		element: <App />,
-		errorElement: <ErrorContent />,
+		errorElement: <Maintenance />,
 		children: [
 			{
 				path: '/contact',

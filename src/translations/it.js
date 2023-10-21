@@ -19,7 +19,7 @@ const messages = {
 		'Sono felice di aver fatto parte del progetto di migrazione di LN-CC verso la nuova architettura PWA, Progressive Web App.' +
 		"\n\nL'architettura headless fa uso di Salesforce Commerce API (Scapi) e React, ma abbiamo utilizzato anche altri strumenti come Redux per la gestione dei dati, TypeScript per migliorare la qualità del codice, Contenful come CMS per gestire il contenuto del sito, ecc." +
 		'\n\nAbbiamo lavorato seguendo le migliori pratiche, confermate da PageSpeed Insights che dà un punteggio del 92 in accessibilità e un punteggio del 92 in SEO.',
-	firstExpTitle: 'Sviluppatore Fullstack Junior',
+	firstExpTitle: 'Sviluppatore Fullstack ',
 	secondExpTitle: 'Allievo Caposettore',
 	firstShortHeading: 'The Level Group | Settembre 2022 - ad oggi',
 	secondShortHeading: 'Leroy Merlin | Settembre 2019 - Settembre 2020',
@@ -28,7 +28,7 @@ const messages = {
 	secondExpDescription:
 		"Gestione delle risorse del dipartimento (ad esempio: orari e implementazione di assortimenti/operazioni commerciali) per raggiungere l'obiettivo; pianificazione anticipata delle strategie commerciali (analisi di nuovi prodotti, riutilizzo di materiali, gestione ottimale delle scorte e aumento della visibilità). Co-costruzione della strategia del negozio in collaborazione con altre sedi; ridefinizione dell'organizzazione e della strategia di vendita a seguito del Covid-19.",
 	firstEduTitle: 'Laurea in Ingegneria Industriale',
-	secondEduTitle: 'Sviluppatore Web Junior',
+	secondEduTitle: 'Sviluppatore Web ',
 	firstEduShortHeading: 'Università di Catania | Ottobre 2013 - Dicembre 2018',
 	secondEduShortHeading: 'Boolean Careers | Gennaio 2021 - Luglio 2021',
 	firstEduDescription:

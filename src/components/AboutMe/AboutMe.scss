@@ -61,4 +61,12 @@
             max-height: 200px;
         }
     }
+
+    .experience-imgs {
+        @media (max-width: 768px) {
+            img {
+                width: 100%
+            }
+        }
+    }
 }

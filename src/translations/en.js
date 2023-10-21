@@ -23,7 +23,7 @@ const messages = {
 		' data management; <hglt>Typescript</hglt> to increase code quality Contenful, CMS to manage the ' +
 		' site content, etc. \n\nWe worked by writing code following best practices, confirmed by PageSpeed' +
 		' Insights which gives a score of 92 on accessibility and 92 on SEO.',
-	firstExpTitle: 'Junior fullstack developer',
+	firstExpTitle: ' fullstack developer',
 	secondExpTitle: 'Trainee Caposettore',
 	firstShortHeading: 'The Level Group | September 2022 - now',
 	secondShortHeading: 'Leroy Merlin| September 2019 - September 2020',
@@ -32,7 +32,7 @@ const messages = {
 	secondExpDescription:
 		'Management of department resources (ex: schedules and implementations of ranges/trade operations) to hit the goal; advance rank planning business strategies (analysis of new products, reuse of materials, optimal stock management and increased visibility). Co-construction of store strategy in collaboration with other locations; reshaping organization and sales strategy as a result of Covid-19.',
 	firstEduTitle: "Bachelor's Degree in Industrial Engineering",
-	secondEduTitle: 'Junior Web Developer',
+	secondEduTitle: ' Web Developer',
 	firstEduShortHeading: 'Università di Catania| October 2013 - December 2018',
 	secondEduShortHeading: 'Boolean Careers | January 2021 - July 2021',
 	firstEduDescription:
