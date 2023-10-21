@@ -1,12 +1,13 @@
 import React from 'react';
 
-import './Grid.scss';
 import {IGridProps} from './IGrid';
+import {GridRow, GridColumn} from './Subcomponents';
 
-//TODO: add gridColumn and gridRow
-
-const Grid = ({children, gridSize, classNames}: IGridProps) => {
-	return <div className={`grid ${classNames}`}>{children}</div>;
+const Grid = ({classNames, children}: IGridProps) => {
+	return <div className={classNames}>{children}</div>;
 };
+
+Grid.Row = GridRow;
+Grid.Column = GridColumn;
 
 export default Grid;

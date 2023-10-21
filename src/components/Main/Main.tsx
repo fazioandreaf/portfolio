@@ -21,20 +21,26 @@ const Main = () => {
 				<Outlet />
 			) : (
 				<Grid classNames="main-grid">
-					<div>
-						<p>
-							<span>
-								{intl.formatMessage(messages.firstPhrase, {
-									firstSpan: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
-									secondSpan: (chunk: any) => <HighlightedSpan color="blue">{chunk}</HighlightedSpan>,
-								})}
-							</span>
-							<span>{intl.formatMessage(messages.secondPhrase)}</span>
-						</p>
-					</div>
-					<div className="profile-wrapper">
-						<img src={require('./../../assets/ln-account.png')} alt="me" />
-					</div>
+					<Grid.Row center>
+						<Grid.Column xs={12} md={8}>
+							<p>
+								<span>
+									{intl.formatMessage(messages.firstPhrase, {
+										firstSpan: (chunk: any) => (
+											<HighlightedSpan color="green">{chunk}</HighlightedSpan>
+										),
+										secondSpan: (chunk: any) => (
+											<HighlightedSpan color="green">{chunk}</HighlightedSpan>
+										),
+									})}
+								</span>
+								<span>{intl.formatMessage(messages.secondPhrase)}</span>
+							</p>
+						</Grid.Column>
+						<Grid.Column classNames="profile-wrapper" xs={12} md={4}>
+							<img src={require('./../../assets/ln-account.png')} alt="me" />
+						</Grid.Column>
+					</Grid.Row>
 				</Grid>
 			)}
 		</main>

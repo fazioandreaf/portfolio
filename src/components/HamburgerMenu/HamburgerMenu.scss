@@ -1,0 +1,52 @@
+.hamburgher-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    width: 20px;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+
+    span {
+        position: absolute;
+        display: inline-block;
+        height: 2px;
+        width: 20px;
+        background-color: var(--green-light);
+    transition: all 0.3s ease-in-out;
+
+    }
+
+    &.open {
+        right: calc(100% - 40px);
+
+        .line {
+           &-1 {
+               transform: translateY(9px) rotate(45deg);
+           }
+
+           &-2 {
+               display: none;
+           }
+
+           &-3 {
+               transform: translateY(-9px) rotate(-45deg);
+           }
+    }
+    }
+
+    .line {
+        &-1 {
+            inset-block-start: 0;
+        }
+
+        &-2 {
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-3 {
+            inset-block-end: 0;
+        }
+    }
+}

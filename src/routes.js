@@ -1,9 +1,6 @@
 import React from 'react';
 
-import App from './components/App/App';
-import Contacts from './components/Contacts';
-import ErrorContent from './components/ErrorContent';
-import Maintenance from './components/Maintenance';
+import {App, Contacts, ErrorContent, AboutMe} from './components';
 
 const routes = [
 	{
@@ -17,7 +14,7 @@ const routes = [
 			},
 			{
 				path: '/about-me',
-				element: <Maintenance />,
+				element: <AboutMe />,
 			},
 		],
 	},

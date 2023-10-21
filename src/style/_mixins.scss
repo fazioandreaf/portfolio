@@ -2,6 +2,7 @@
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
+	
 
 	&::after {
 		content: '';
@@ -23,5 +24,11 @@
 
 	&.active::after {
 		transform: scaleX(1);
+	}
+
+	@media (max-width: 768px) {
+		&::after {
+		transform: scaleX(1);
+	}
 	}
 }

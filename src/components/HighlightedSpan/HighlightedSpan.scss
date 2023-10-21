@@ -3,6 +3,15 @@
 		transform: scaleX(1);
 		transform-origin: bottom left;
 	}
+
+	@media (max-width: 768px) {
+		span.highlighted-span::after {
+			transform: scaleX(1);
+			transform-origin: bottom left;
+		}
+	}
+
+
 	.highlighted-span {
 		position: relative;
 		display: inline-block;
