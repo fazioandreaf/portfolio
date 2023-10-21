@@ -1,7 +1,18 @@
-.material-symbols-outlined {
-	animation: logo-spin infinite 1.5s linear;
+.maintenance-title {
+	.material-symbols-outlined {
+		animation: logo-spin infinite 1.5s linear;
+	}
 }
 
 .linkedin-link {
 	display: inline-block;
+}
+
+@keyframes logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
 }

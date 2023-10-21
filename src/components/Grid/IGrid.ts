@@ -1,7 +1,8 @@
-import {ReactNode} from 'react';
+import React from 'react';
+
+export type TGridSpacing = 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 export interface IGridProps {
-	children: ReactNode;
-	gridSize?: number;
 	classNames?: string;
+	children: React.ReactNode;
 }

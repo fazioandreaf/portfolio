@@ -1,0 +1,64 @@
+.about-me {
+    width: 100%;
+
+    .grid {
+        transition: 0.3s all ease-in-out;
+        overflow: hidden;
+
+        &-closed {
+            max-height: 0;
+        }
+
+        &-open {
+            max-height: 70vh;
+
+            @media (max-width: 768px) {
+                max-height: 300vh;
+            }
+        }
+    }
+
+    h2 {
+        position: relative;
+        cursor: pointer;
+
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: 0.3s all ease-in-out;
+        }
+
+        &.close span {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+
+    h3 {
+        margin: 10px 0;
+        text-transform: uppercase;
+    }
+
+    h4 {
+        margin: 5px 0;
+    }
+
+    .lncc-video {
+        width: 100%;
+
+        @media (max-width: 768px) {
+            height: 200px;
+        }
+    }
+
+    .education-imgs,
+    .experience-imgs {
+        position: relative;
+        max-height: 400px;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            max-height: 200px;
+        }
+    }
+}

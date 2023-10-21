@@ -1,0 +1,28 @@
+.col {
+	@for $i from 1 through 12 {
+		&[class*="col-#{$i}"] {
+			flex-basis: calc(100% / (12 / #{$i}) - (var(--gutters-grid)));
+		}
+	}
+
+
+	&[class$="-md"] {
+		@media (min-width: 768px) {
+			@for $i from 1 through 12 {
+				&[class*="col-#{$i}-md"] {
+					flex-basis: calc(100% / (12 / #{$i}) - (var(--gutters-grid)));
+				}
+			}
+		}
+	}
+
+	&[class$="-lg"] {
+		@media (min-width: 1024px) {
+			@for $i from 1 through 12 {
+				&[class*="col-#{$i}-lg"] {
+					flex-basis: calc(100% / (12 / #{$i}) - (var(--gutters-grid)));
+				}
+			}
+		}
+	}
+}

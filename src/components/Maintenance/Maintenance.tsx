@@ -5,7 +5,7 @@ import './Maintenance.scss';
 const Maintenance = () => {
 	return (
 		<>
-			<div>
+			<div className='maintenance-title'>
 				{/* TODO: Import svg inside the project */}
 				<span className="material-symbols-outlined">sync</span>
 			</div>
