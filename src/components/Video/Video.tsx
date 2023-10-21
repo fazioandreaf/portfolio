@@ -1,7 +1,7 @@
 import React from 'react';
 import YouTube, {YouTubeProps} from 'react-youtube';
 
-function VideoPlayer({opts}: YouTubeProps) {
+function VideoPlayer({opts, ...props}: YouTubeProps) {
 	const defaultOpts = {
 		height: '390',
 		width: '640',
@@ -11,13 +11,12 @@ function VideoPlayer({opts}: YouTubeProps) {
 	};
 
 	return (
-		<div>
-			<YouTube
-				videoId="CL_DMABCj58"
-				opts={Object.assign({}, defaultOpts, opts)}
-				onReady={(e) => e.target.pauseVideo()}
-			/>
-		</div>
+		<YouTube
+			videoId="CL_DMABCj58"
+			opts={Object.assign({}, defaultOpts, opts)}
+			onReady={(e) => e.target.pauseVideo()}
+			{...props}
+		/>
 	);
 }
 

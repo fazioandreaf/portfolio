@@ -1,4 +1,4 @@
-.main-grid {
+main {
 	&:hover .highlighted-span::after {
 		transform: scaleX(1);
 		transform-origin: bottom left;
@@ -11,7 +11,6 @@
 		}
 	}
 
-
 	.highlighted-span {
 		position: relative;
 		display: inline-block;
@@ -19,9 +18,11 @@
 		&[data-color='green']::after {
 			background-color: green;
 		}
+
 		&[data-color='blue']::after {
 			background-color: blue;
 		}
+
 		&[data-color='red']::after {
 			background-color: red;
 		}

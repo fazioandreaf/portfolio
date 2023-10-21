@@ -1,6 +1,9 @@
 .row {
+    --gutters-grid: 20px;
+
     display: flex;
     flex-flow: row wrap;
+	gap: var(--gutters-grid);
 
     &.center {
         align-items: center;

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import './HighlightedSpan.scss';
 import {IHighlightedSpanProps} from './IHighlightedSpan';
+
+import './HighlightedSpan.scss';
 
 const HighlightedSpan = ({color, children}: IHighlightedSpanProps) => {
 	return color && children ? (
