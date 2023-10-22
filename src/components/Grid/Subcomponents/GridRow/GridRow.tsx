@@ -7,7 +7,7 @@ import './GridRow.scss';
 
 const GridRow = ({classNames, center, style, children}: IGridRowProps) => {
 	const attrs: {className: string; style?: React.CSSProperties} = {
-		className: cn('row', classNames, {['center']: center}),
+		className: cn('row', classNames, {center: center}),
 	};
 
 	if (style) {
