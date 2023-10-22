@@ -5,6 +5,8 @@ import {useIntl} from 'react-intl';
 
 import {HighlightedSpan, Grid} from './../index';
 
+import {SoftSkills, HardSkills} from './SubComponents';
+
 import './Main.scss';
 
 import messages from './messages';
@@ -19,9 +21,9 @@ const Main = () => {
 			{!isHomepage ? (
 				<Outlet />
 			) : (
-				<Grid classNames="main-grid">
+				<Grid classNames="main__grid">
 					<Grid.Row center>
-						<Grid.Column xs={12} md={10}>
+						<Grid.Column xs={12} md={10} classNames="main__slogan">
 							<p>
 								{intl.formatMessage(messages.firstPhrase, {
 									firstSpan: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
@@ -32,21 +34,14 @@ const Main = () => {
 								{intl.formatMessage(messages.secondPhrase)}
 							</p>
 						</Grid.Column>
-						<Grid.Column xs={6} md={2}>
+						<Grid.Column xs={6} md={2} classNames="main__profile-wrapper">
 							<div className="profile-wrapper">
 								<img src={require('./../../assets/ln-account.png')} alt="me" />
 							</div>
 						</Grid.Column>
-						<Grid.Column xs={6} md={2} classNames="soft-skills">
-							<h3>{intl.formatMessage(messages.softSkills)}</h3>
-							<ul>
-								<li>{intl.formatMessage(messages.leadership)}</li>
-								<li>{intl.formatMessage(messages.cooperative)}</li>
-								<li>{intl.formatMessage(messages.goal)}</li>
-								<li>{intl.formatMessage(messages.decision)}</li>
-								<li>{intl.formatMessage(messages.spirit)}</li>
-								<li>{intl.formatMessage(messages.communicative)}</li>
-							</ul>
+						<Grid.Column xs={12} md={4} classNames="main__skills">
+							<HardSkills />
+							<SoftSkills />
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
