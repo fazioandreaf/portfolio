@@ -7,15 +7,11 @@ import './GridColumn.scss';
 
 const GridColumn = ({xs, md, lg, classNames, style, children}: IGridColumnProps) => {
 	const attrs: {className: string; style?: React.CSSProperties} = {
-		className: cn(
-			'col',
-			{
-				[`col-${xs}-xs`]: xs,
-				[`col-${md}-md`]: md,
-				[`col-${lg}-lg`]: lg,
-			},
-			classNames,
-		),
+		className: cn('col', classNames, {
+			[`col-${xs}-xs`]: xs,
+			[`col-${md}-md`]: md,
+			[`col-${lg}-lg`]: lg,
+		}),
 	};
 
 	// Prepare the styles object
