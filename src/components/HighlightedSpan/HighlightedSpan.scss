@@ -1,43 +1,39 @@
 main {
-	&:hover .highlighted-span::after {
-		transform: scaleX(1);
+	&:hover .highlighted-span {
 		transform-origin: bottom left;
+
+		&[data-color='green'] {
+			color: var(--green-light);
+		}
+
+		&[data-color='blue'] {
+			color: blue;
+		}
+
+		&[data-color='red'] {
+			color: red;
+		}
 	}
 
 	@media (max-width: 768px) {
-		span.highlighted-span::after {
-			transform: scaleX(1);
-			transform-origin: bottom left;
+		span.highlighted-span {
+			&[data-color='green'] {
+				color: var(--green-light);
+			}
+
+			&[data-color='blue'] {
+				color: blue;
+			}
+
+			&[data-color='red'] {
+				color: red;
+			}
 		}
 	}
 
 	.highlighted-span {
 		position: relative;
 		display: inline-block;
-
-		&[data-color='green']::after {
-			background-color: green;
-		}
-
-		&[data-color='blue']::after {
-			background-color: blue;
-		}
-
-		&[data-color='red']::after {
-			background-color: red;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			inset-block-start: 0;
-			inset-inline-start: 0;
-			transform: scaleX(0);
-			transform-origin: bottom right;
-			transition: transform 0.3s ease-in-out;
-			mix-blend-mode: color;
-		}
+		transition: color 0.3s ease-in-out;
 	}
 }

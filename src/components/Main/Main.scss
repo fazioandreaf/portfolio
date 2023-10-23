@@ -14,6 +14,10 @@ main {
 		@media (max-width: 512px) {
 			flex-direction: column;
 		}
+
+		.row {
+			position: relative;
+		}
 	}
 
 	span {
@@ -54,6 +58,10 @@ main {
 	.main__skills {
 		display: flex;
 		gap: 30px;
+
+		@media (min-width: 766px) {
+			margin-block-start: 30px;
+		}
 	}
 
 	@media (max-width: 768px) {

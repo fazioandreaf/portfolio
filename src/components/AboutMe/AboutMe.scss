@@ -10,8 +10,6 @@
         }
 
         &-open {
-            max-height: 70vh;
-
             @media (max-width: 768px) {
                 max-height: 300vh;
             }
@@ -36,7 +34,7 @@
     }
 
     h3 {
-        margin: 10px 0;
+        margin-block-end: 10px;
         text-transform: uppercase;
     }
 

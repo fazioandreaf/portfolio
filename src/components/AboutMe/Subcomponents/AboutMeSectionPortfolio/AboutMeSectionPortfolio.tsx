@@ -3,21 +3,18 @@ import {useIntl} from 'react-intl';
 
 import {HighlightedSpan} from '../../../index';
 
+import './AboutMeSectionPortfolio.scss';
+
 import messages from './messages';
 
-const AboutMeSectionProject = () => {
+const AboutMeSectionPortfolio = () => {
 	const intl = useIntl();
 
 	return (
 		<>
-			<h3>{intl.formatMessage(messages.lnccPWA)}</h3>
-			<p>
-				{useIntl().formatMessage(messages.firstProject, {
-					lncc: (chunk: any) => (
-						<a href="ln-cc.com" target="_blank">
-							{chunk}
-						</a>
-					),
+			<h3>{intl.formatMessage(messages.title)}</h3>
+			<p className="ams-portfolio__paragraph">
+				{intl.formatMessage(messages.description, {
 					hglt: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
 				})}
 			</p>
@@ -25,4 +22,4 @@ const AboutMeSectionProject = () => {
 	);
 };
 
-export default AboutMeSectionProject;
+export default AboutMeSectionPortfolio;

@@ -6,6 +6,8 @@ import {IntlProvider} from 'react-intl';
 import routes from './routes';
 import LocaleCtx from './context';
 
+import {Maintenance} from './components';
+
 import './style/global.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +26,7 @@ const Wrapper = () => {
 						type="font/woff2"
 						crossOrigin
 					/>
-					<RouterProvider router={createBrowserRouter(routes)} fallbackElement={<span>olaaaaaaaa</span>} />
+					<RouterProvider router={createBrowserRouter(routes)} fallbackElement={<Maintenance />} />
 				</IntlProvider>
 			) : (
 				<span>Loading...</span>
