@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import Navigation from './../Navigation';
+import {NavLink} from 'react-router-dom';
 
 import './Header.scss';
 
@@ -14,12 +15,12 @@ const Header = () => {
 	return (
 		<header className="header">
 			<div className={`logo ${isOpen ? 'open' : ''}`}>
-				<a href="/">
+				<NavLink to="/">
 					<span>fazio</span>
 					<span>andrea</span>
 					<span>.</span>
 					<span>me</span>
-				</a>
+				</NavLink>
 				<h1 style={{display: 'none'}}>fazioandrea.me</h1>
 			</div>
 			<Navigation isOpen={isOpen} handleOpen={handleOpen} />

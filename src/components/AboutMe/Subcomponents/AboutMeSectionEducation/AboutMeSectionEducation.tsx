@@ -1,8 +1,6 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import './AboutMeSectionEducation.scss';
-
 import messages from './messages';
 
 const AboutMeSectionEducation = () => {

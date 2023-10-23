@@ -1,8 +1,6 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import './AboutMeSectionExperience.scss';
-
 import messages from './messages';
 
 const AboutMeSectionExperience = () => {

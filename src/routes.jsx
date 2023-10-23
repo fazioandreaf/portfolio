@@ -8,6 +8,7 @@ const routes = [
 		element: <App />,
 		errorElement: <Maintenance />,
 		children: [
+			{index: true, element: <Maintenance />},
 			{
 				path: '/contact',
 				element: <Contacts />,
@@ -17,6 +18,10 @@ const routes = [
 				element: <AboutMe />,
 			},
 		],
+	},
+	{
+		path: '*',
+		element: <Maintenance />,
 	},
 ];
 

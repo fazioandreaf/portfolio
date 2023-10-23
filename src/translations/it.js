@@ -1,9 +1,9 @@
 const messages = {
 	contact: 'Contatti',
 	aboutMe: 'Chi Sono',
-	firstPhrase: 'Oltre ad essere uno sviluppatore, sono anche un ingegnere.',
+	firstPhrase: 'Oltre ad essere uno <span>sviluppatore</span>, sono anche un <span>ingegnere</span>.\n ',
 	secondPhrase:
-		"Sin dai tempi della scuola, ho una forte passione per l'informatica e la tecnologia con un obiettivo chiaro in mente:\n\nmassimizzare il potenziale degli strumenti a disposizione e migliorare i processi.",
+		"Sin dai tempi della scuola, ho una forte passione per l'informatica e la tecnologia con un obiettivo chiaro in mente:\nmassimizzare il potenziale degli <span>strumenti</span> a disposizione e migliorare i <span>processi</span>.",
 	softSkills: 'Competenze Trasversali',
 	communicative: 'Comunicativo',
 	spirit: 'Spirito Adattivo',
@@ -36,6 +36,13 @@ const messages = {
 		"'automobile e le sue evoluzioni'. Per la consultazione, puoi trovarla a questo link.",
 	secondEduDescription:
 		'In questa esperienza, ho realizzato progetti stimolanti ispirati a siti web e app famose, come Netflix, Whatsapp Web, Spotify Web e molti altri. \n\nIl progetto finale rappresenta una simulazione di sviluppo di un sito simile ad Airbnb facente parte di un team scelto dal PM; principalmente mi sono occupato della parte backend e della creazione della ricerca avanzata con inserimento di mappe interattive tramite chiamate API TomTom. \n\nTrova il progetto BoolB&b qui.',
+	boolBnBTitle: 'BoolBnB: ultimo progetto in Boolean - 2021',
+	boolBnBDescription:
+		"Come rendere una mappa dinamica utilizzando filtri?\nNel mio progetto finale presso <hglt>Boolean</hglt>, ho gestito l'implementazione della <hglt>ricerca avanzata</hglt> e la sua integrazione con la mappa utilizzando le API di TomTom.\nSono molto felice del risultato, ma sono consapevole che c'è spazio per ulteriori miglioramenti! 💪",
+
+	portfolioTitle: 'Il mio sito personale - 2023',
+	portfolioDescription:
+		"Benvenuti nel mio sito portfolio! La creazione di questo sito rappresenta un appassionante passatempo che mi spinge costantemente a mettermi alla prova. Questo progetto mi sprona a prendere decisioni e ad affrontare nuove sfide.\n\nHo scelto di avviare il progetto utilizzando <hglt>React</hglt>, il framework con cui lavoro prevalentemente, ma ho deciso di non limitarmi alla mia zona di comfort. Ho introdotto alcune piccole transizioni per migliorare l'esperienza del sito, e sto valutando l'opportunità di integrare <hglt>Three.js</hglt> per creare un gioco interattivo. Non è da escludere neanche l'aggiunta di una dashboard per i punteggi.\n\nIn questo progetto sto esplorando diverse aree in cui ho identificato delle lacune, come il deployment e soluzioni architetturali, ma forse queste sfide vanno oltre il semplice ambito di un sito portfolio. Questo costante processo di pensiero mantiene il sito in uno stato di continua evoluzione.\n\nAttualmente, lo considero un progetto di base, con un'importante enfasi sul frontend. Sto già progettando di implementare il server-side rendering (SSR), valutando sia l'utilizzo di React Router (già presente nel sito) sia considerando <hglt>Next.js</hglt> come alternativa.\n\nHo avviato questa repository un anno fa, ma è solo nelle ultime tre settimane che il sito ha iniziato a prendere vita. Ho riscoperto il piacere di scrivere, <hglt>motivato semplicemente dalla passione</hglt> per la creazione, e incoraggio tutti i miei colleghi sviluppatori a fare altrettanto.",
 };
 
 export default messages;

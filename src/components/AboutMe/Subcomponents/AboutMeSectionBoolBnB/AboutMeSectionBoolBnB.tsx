@@ -5,19 +5,14 @@ import {HighlightedSpan} from '../../../index';
 
 import messages from './messages';
 
-const AboutMeSectionProject = () => {
+const AboutMeSectionBoolBnB = () => {
 	const intl = useIntl();
 
 	return (
 		<>
-			<h3>{intl.formatMessage(messages.lnccPWA)}</h3>
+			<h3>{intl.formatMessage(messages.title)}</h3>
 			<p>
-				{useIntl().formatMessage(messages.firstProject, {
-					lncc: (chunk: any) => (
-						<a href="ln-cc.com" target="_blank">
-							{chunk}
-						</a>
-					),
+				{intl.formatMessage(messages.description, {
 					hglt: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
 				})}
 			</p>
@@ -25,4 +20,4 @@ const AboutMeSectionProject = () => {
 	);
 };
 
-export default AboutMeSectionProject;
+export default AboutMeSectionBoolBnB;

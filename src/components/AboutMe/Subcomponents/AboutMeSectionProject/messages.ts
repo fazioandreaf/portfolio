@@ -3,7 +3,7 @@ import {defineMessages} from 'react-intl';
 export default defineMessages({
 	lnccPWA: {
 		id: 'lnccPWA',
-		defaultMessage: 'LN-CC Progressive web app',
+		defaultMessage: 'LN-CC Progressive web app - 2023',
 	},
 	firstProject: {
 		id: 'firstProject',

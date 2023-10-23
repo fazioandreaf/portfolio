@@ -1,0 +1,6 @@
+p.ams-portfolio__paragraph {
+    @media (min-width: 768px) {
+        column-count: 2;
+        column-gap: 20px;
+    }
+}

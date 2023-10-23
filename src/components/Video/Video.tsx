@@ -10,14 +10,7 @@ function VideoPlayer({opts, ...props}: YouTubeProps) {
 		},
 	};
 
-	return (
-		<YouTube
-			videoId="CL_DMABCj58"
-			opts={Object.assign({}, defaultOpts, opts)}
-			onReady={(e) => e.target.pauseVideo()}
-			{...props}
-		/>
-	);
+	return <YouTube opts={Object.assign({}, defaultOpts, opts)} onReady={(e) => e.target.pauseVideo()} {...props} />;
 }
 
 export default VideoPlayer;
