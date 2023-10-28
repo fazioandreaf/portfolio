@@ -1,9 +1,17 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext, ReactNode} from 'react';
 import {IntlProvider} from 'react-intl';
+import {Titillium_Web} from 'next/font/google';
 import cn from 'classnames';
 
 import Header from '../Header';
 import Logo from '../Logo';
+
+// If loading a variable font, you don't need to specify the font weight
+const titilliumRegular = Titillium_Web({
+	weight: '400',
+	subsets: ['latin'],
+	display: 'swap',
+});
 
 import {photoASCII} from '../../constants.js';
 
@@ -11,7 +19,7 @@ import styles from './LayoutRoot.module.scss';
 
 import LocaleCtx from './../../context';
 
-const Wrapper = ({children}: {children: Element}) => {
+const Wrapper = ({children}: {children: ReactNode}) => {
 	const context = useContext(LocaleCtx);
 	const [domLoaded, setDomLoaded] = useState(false);
 
@@ -25,7 +33,7 @@ const Wrapper = ({children}: {children: Element}) => {
 	return context && domLoaded ? (
 		<IntlProvider locale={context.locale} messages={require(`./../../translations/${context.locale}`).default}>
 			<Header />
-			{children}
+			<main className={cn(styles['main'], titilliumRegular.className)}>{children}</main>
 		</IntlProvider>
 	) : (
 		<div className={styles['loading']}>
@@ -34,17 +42,15 @@ const Wrapper = ({children}: {children: Element}) => {
 	);
 };
 
-const LayoutRoot = ({children}: {children: Element}) => {
+const LayoutRoot = ({children}: {children: ReactNode}) => {
 	return (
-		<div className={cn('app-container')}>
-			<LocaleCtxProvider>
-				<Wrapper children={children} />
-			</LocaleCtxProvider>
-		</div>
+		<LocaleCtxProvider>
+			<Wrapper children={children} />
+		</LocaleCtxProvider>
 	);
 };
 
-const LocaleCtxProvider = ({children}) => {
+const LocaleCtxProvider = ({children}: {children: ReactNode}) => {
 	const [locale, setLocale] = useState('en');
 
 	// Funzione per aggiornare locale

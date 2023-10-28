@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import GridRow from './Subcomponents/GridRow';
-import GridColumn from './Subcomponents/GridColumn';
+import {GridRow, GridColumn} from './SubComponents';
 import {IGridProps} from './IGrid';
 
 import styles from './Grid.module.scss';

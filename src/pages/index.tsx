@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 
-import Main from './../components/Main';
-import LayoutRoot from './../components/LayoutRoot';
+import HomepageComponent from './../components/HomepageComponent';
+import Logo from './../components/Logo';
 
 const Homepage = () => {
 	return (
-		<LayoutRoot>
-			<Main />
-		</LayoutRoot>
+		<Suspense fallback={<Logo />}>
+			<HomepageComponent />
+		</Suspense>
 	);
 };
 

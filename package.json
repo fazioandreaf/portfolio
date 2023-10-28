@@ -7,7 +7,8 @@
 	},
 	"scripts": {
 		"dev": "next dev",
-		"trace": "node --trace-warnings node_modules/next/dist/bin/next"
+		"trace": "node --trace-warnings node_modules/next/dist/bin/next",
+		"lint": "next lint",
 	},
 	"devDependencies": {
 		"classnames": "^2.3.2",

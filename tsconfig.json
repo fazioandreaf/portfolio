@@ -1,23 +1,33 @@
 {
-	"compilerOptions": {
-		"target": "es2016",
-		"jsx": "preserve",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"baseUrl": "src",
-		"resolveJsonModule": true,
-		"allowJs": true,
-		"isolatedModules": true,
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"noFallthroughCasesInSwitch": true,
-		"skipLibCheck": true,
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"noEmit": true,
-		"incremental": true
-	},
-	"include": ["./src/**/*.ts", "./assets/*", "src/pages/_app.js", "src/pages/index.tsx-placeholder"],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es2016",
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "noEmit": true,
+    "incremental": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
