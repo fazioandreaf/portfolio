@@ -1,0 +1,27 @@
+.logo {
+	width: 30%;
+	align-self: center;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+
+	a:after {
+		display: none;
+	}
+
+	span {
+		font-size: 32px;
+
+		@media (max-width: 768px) {
+			font-size: 20px;
+		}
+
+		&:nth-child(2n - 1) {
+			color: var(--green-light);
+		}
+	}
+
+	&.open {
+		width: 0;
+		opacity: 0;
+	}
+}

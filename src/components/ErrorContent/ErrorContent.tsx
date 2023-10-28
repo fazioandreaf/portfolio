@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ErrorContent.scss';
+import styles from  './ErrorContent.module.scss';
 
 const ErrorContent = () => {
 	return <div>ErrorContent</div>;

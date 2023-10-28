@@ -1,7 +1,7 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import './SoftSkills.scss';
+import styles from './SoftSkills.module.scss';
 
 import messages from './messages';
 
@@ -9,7 +9,7 @@ const SoftSkills = () => {
 	const intl = useIntl();
 
 	return (
-		<div className="skills">
+		<div className={styles['skills']}>
 			<h3>{intl.formatMessage(messages.softSkills)}</h3>
 			<ul>
 				<li>{intl.formatMessage(messages.leadership)}</li>

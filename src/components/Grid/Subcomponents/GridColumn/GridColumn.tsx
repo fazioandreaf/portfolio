@@ -3,11 +3,11 @@ import cn from 'classnames';
 
 import {IGridColumnProps} from './IGridColumn';
 
-import './GridColumn.scss';
+import styles from './GridColumn.module.scss';
 
 const GridColumn = ({xs, md, lg, classNames, style, children}: IGridColumnProps) => {
 	const attrs: {className: string; style?: React.CSSProperties} = {
-		className: cn('col', classNames, {
+		className: cn(styles['col'], classNames, {
 			[`col-${xs}-xs`]: xs,
 			[`col-${md}-md`]: md,
 			[`col-${lg}-lg`]: lg,

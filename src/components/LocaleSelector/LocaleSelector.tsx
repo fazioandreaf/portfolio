@@ -1,8 +1,9 @@
 import React, {useContext} from 'react';
+import cn from 'classnames';
 
 import LocaleCtx from './../../context';
 
-import './LocaleSelector.scss';
+import styles from './LocaleSelector.module.scss';
 
 const LocaleSelector = () => {
 	const context = useContext(LocaleCtx);
@@ -12,12 +13,12 @@ const LocaleSelector = () => {
 	};
 
 	return (
-		<div className="locale-selector">
-			<span className={context.locale === 'en' ? 'active' : ''} onClick={() => handlerLocaleLS('en')}>
+		<div className={styles['locale-selector']}>
+			<span className={cn({[styles['active']]: context.locale === 'en'})} onClick={() => handlerLocaleLS('en')}>
 				EN
 			</span>
 			/
-			<span className={context.locale === 'it' ? 'active' : ''} onClick={() => handlerLocaleLS('it')}>
+			<span className={cn({[styles['active']]: context.locale === 'it'})} onClick={() => handlerLocaleLS('it')}>
 				IT
 			</span>
 		</div>
