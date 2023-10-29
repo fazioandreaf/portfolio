@@ -4,8 +4,8 @@ import {useIntl} from 'react-intl';
 import cn from 'classnames';
 import MediaQuery, {useMediaQuery} from 'react-responsive';
 
-import LocaleSelector from './../LocaleSelector';
-import HamburgerMenu from './../HamburgerMenu';
+import LocaleSelector from 'baseComponents/LocaleSelector';
+import HamburgerMenu from 'baseComponents/HamburgerMenu';
 
 import styles from './Navigation.module.scss';
 

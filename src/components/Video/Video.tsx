@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import YouTube, {YouTubeProps} from 'react-youtube';
 
-import Skeleton from './../Skeleton';
+import Skeleton from 'baseComponents/Skeleton';
 
 const Video = ({opts, ...props}: YouTubeProps) => {
 	const defaultOpts = {

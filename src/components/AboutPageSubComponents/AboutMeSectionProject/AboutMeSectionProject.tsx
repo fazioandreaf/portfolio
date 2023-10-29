@@ -1,7 +1,7 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import {HighlightedSpan} from '../../../../components/index';
+import HighlightedSpan from 'baseComponents/HighlightedSpan';
 
 import messages from './messages';
 

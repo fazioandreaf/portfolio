@@ -2,7 +2,7 @@
 
 import {useEffect} from 'react';
 
-import {Maintenance} from 'components';
+import Maintenance from 'baseComponents/Maintenance';
 
 export default function Error({error, reset}: {error: Error & {digest?: string}; reset: () => void}) {
 	useEffect(() => {

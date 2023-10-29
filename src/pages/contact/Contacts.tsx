@@ -3,14 +3,12 @@ import {useIntl} from 'react-intl';
 
 import styles from './Contacts.module.scss';
 
-import messages from './messages';
-
 const Contacts = () => {
 	const intl = useIntl();
 
 	return (
 		<>
-			<h3>{intl.formatMessage(messages.cvTitle)}</h3>
+			<h3>{intl.formatMessage({id: 'cvTitle'})}</h3>
 			<div className={styles['cv-div']}>
 				<a href="./andrea-fazio_it.pdf" download>
 					CV IT

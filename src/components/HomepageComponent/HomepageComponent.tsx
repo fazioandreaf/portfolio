@@ -10,7 +10,7 @@ import {SoftSkills, HardSkills} from './SubComponents';
 
 import styles from './HomepageComponent.module.scss';
 
-import profilePic from './../../assets/ln-account.png';
+import profilePic from 'baseAssets/ln-account.png';
 import messages from './messages';
 
 const HomepageComponent = () => {

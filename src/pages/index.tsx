@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react';
 
-import HomepageComponent from './../components/HomepageComponent';
-import Logo from './../components/Logo';
+import HomepageComponent from 'baseComponents/HomepageComponent';
+import Logo from 'baseComponents/Logo';
 
 const Homepage = () => {
 	return (

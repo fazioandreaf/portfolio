@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = {
+	sassOptions: {
+		includePaths: [path.join(__dirname, 'styles')],
+	},
+	images: {unoptimized: true},
 	webpack: (config) => {
 		config.module.rules.push({
 			test: '/.(woff|woff2|eot|ttf|otf)$',
@@ -14,4 +18,5 @@ module.exports = {
 
 		return config;
 	},
+	output: 'export',
 };

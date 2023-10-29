@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-import Navigation from './../Navigation';
-import Logo from './../Logo';
+import Navigation from 'baseComponents/Navigation';
+import Logo from 'baseComponents/Logo';
 
 import styles from './Header.module.scss';
 

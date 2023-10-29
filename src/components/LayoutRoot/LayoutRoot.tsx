@@ -45,16 +45,16 @@ const Wrapper = ({children}: {children: ReactNode}) => {
 const LayoutRoot = ({children}: {children: ReactNode}) => {
 	return (
 		<LocaleCtxProvider>
-			<Wrapper children={children} />
+			<Wrapper>{children}</Wrapper>
 		</LocaleCtxProvider>
 	);
 };
 
 const LocaleCtxProvider = ({children}: {children: ReactNode}) => {
-	const [locale, setLocale] = useState('en');
+	const [locale, setLocale] = useState<string>('en');
 
 	// Funzione per aggiornare locale
-	const handleLocale = (newData) => {
+	const handleLocale = (newData: string) => {
 		setLocale(newData);
 	};
 

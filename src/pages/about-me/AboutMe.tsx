@@ -1,8 +1,10 @@
 import React, {useState, useCallback} from 'react';
 import {useIntl} from 'react-intl';
+import Image from 'next/image';
 import cn from 'classnames';
 
-import {Video, Grid} from '../../components/index';
+import Video from 'baseComponents/Video';
+import Grid from 'baseComponents/Grid';
 
 import {
 	AboutMeSectionProject,
@@ -10,8 +12,10 @@ import {
 	AboutMeSectionExperience,
 	AboutMeSectionBoolBnB,
 	AboutMeSectionPortfolio,
-} from './SubComponents';
-import messages from './messages';
+} from 'baseComponents/AboutPageSubComponents';
+
+import tlg from 'baseAssets/tlg.png';
+import degreeMe from 'baseAssets/degree-me.png';
 
 import styles from './AboutMe.module.scss';
 
@@ -32,7 +36,7 @@ const AboutMe = () => {
 	return (
 		<div className={styles['about-me']}>
 			<h2 onClick={() => handleOpen('project')} className={cn({close: !isOpenObj.project})}>
-				{intl.formatMessage(messages.project)}
+				{intl.formatMessage({id: 'project'})}
 				<span className="material-symbols-outlined">expand_more</span>
 			</h2>
 			<Grid classNames={`grid ${isOpenObj['project'] ? 'grid-open' : 'grid-closed'}`}>
@@ -59,7 +63,7 @@ const AboutMe = () => {
 				</Grid.Row>
 			</Grid>
 			<h2 onClick={() => handleOpen('experience')} className={cn({close: !isOpenObj.experience})}>
-				{intl.formatMessage(messages.experience)}
+				{intl.formatMessage({id: 'experience'})}
 				<span className="material-symbols-outlined">expand_more</span>
 			</h2>
 			<Grid classNames={`grid ${isOpenObj['experience'] ? 'grid-open' : 'grid-closed'}`}>
@@ -67,7 +71,7 @@ const AboutMe = () => {
 					<Grid.Column xs={12} lg={6}>
 						<div className={styles['experience-imgs']}>
 							{/* <img src={require('./../../assets/stories.jpg')} alt="me" /> */}
-							<img src={require('./../../assets/tlg.png')} alt="me" />
+							<Image src={tlg} alt="me" />
 						</div>
 					</Grid.Column>
 					<Grid.Column xs={12} lg={6}>
@@ -76,14 +80,14 @@ const AboutMe = () => {
 				</Grid.Row>
 			</Grid>
 			<h2 onClick={() => handleOpen('education')} className={cn({close: !isOpenObj.education})}>
-				{intl.formatMessage(messages.education)}
+				{intl.formatMessage({id: 'education'})}
 				<span className="material-symbols-outlined">expand_more</span>
 			</h2>
 			<Grid classNames={`grid ${isOpenObj['education'] ? 'grid-open' : 'grid-closed'}`}>
 				<Grid.Row center>
 					<Grid.Column xs={12} lg={6}>
 						<div className={styles['education-imgs']}>
-							<img src={require('./../../assets/degree-me.png')} alt="me" />
+							<Image src={degreeMe} alt="me" />
 							{/* <img src={require('./../../assets/blb.jpg')} alt="me" /> */}
 						</div>
 					</Grid.Column>

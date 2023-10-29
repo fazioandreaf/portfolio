@@ -1,19 +1,17 @@
 import React from 'react';
 import {useIntl} from 'react-intl';
 
-import {HighlightedSpan} from '../../../../components/index';
-
-import styles from './AboutMeSectionPortfolio.module.scss';
+import HighlightedSpan from 'baseComponents/HighlightedSpan';
 
 import messages from './messages';
 
-const AboutMeSectionPortfolio = () => {
+const AboutMeSectionBoolBnB = () => {
 	const intl = useIntl();
 
 	return (
 		<>
 			<h3>{intl.formatMessage(messages.title)}</h3>
-			<p className={styles['ams-portfolio__paragraph']}>
+			<p>
 				{intl.formatMessage(messages.description, {
 					hglt: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
 				})}
@@ -22,4 +20,4 @@ const AboutMeSectionPortfolio = () => {
 	);
 };
 
-export default AboutMeSectionPortfolio;
+export default AboutMeSectionBoolBnB;
