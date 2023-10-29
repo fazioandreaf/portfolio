@@ -6,7 +6,6 @@
 		"moduleResolution": "node",
 		"baseUrl": "./",
 		"paths": {
-			// "baseComponents": ["src/components/index.js"],
 			"baseComponents/*": ["src/components/*"],
 			"baseAssets/*": ["src/assets/*"]
 		},
