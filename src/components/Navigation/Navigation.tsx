@@ -1,12 +1,13 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import Link from 'next/link';
 import {useIntl} from 'react-intl';
+import cn from 'classnames';
 import MediaQuery, {useMediaQuery} from 'react-responsive';
 
-import LocaleSelector from './../LocaleSelector';
-import HamburgerMenu from './../HamburgerMenu';
+import LocaleSelector from 'baseComponents/LocaleSelector';
+import HamburgerMenu from 'baseComponents/HamburgerMenu';
 
-import './Navigation.scss';
+import styles from './Navigation.module.scss';
 
 import messages from './messages';
 
@@ -15,7 +16,7 @@ const Navigation = ({isOpen = false, handleOpen}: {isOpen?: boolean; handleOpen:
 	const isMobile = useMediaQuery({maxWidth: 778});
 
 	return (
-		<nav className={`${isMobile && isOpen ? 'open' : ''}`}>
+		<nav className={cn(styles['nav'], {[styles['open']]: isMobile && isOpen})}>
 			<MediaQuery maxWidth={778}>
 				<HamburgerMenu onClick={() => handleOpen(!isOpen)} isOpen={isOpen} />
 			</MediaQuery>
@@ -24,20 +25,10 @@ const Navigation = ({isOpen = false, handleOpen}: {isOpen?: boolean; handleOpen:
 					<LocaleSelector />
 				</li>
 				<li>
-					<NavLink
-						to="/contact"
-						className={({isActive, isPending}) => (isPending ? 'pending' : isActive ? 'active' : '')}
-					>
-						{intl.formatMessage(messages.contact)}
-					</NavLink>
+					<Link href="/contact">{intl.formatMessage(messages.contact)}</Link>
 				</li>
 				<li>
-					<NavLink
-						to="/about-me"
-						className={({isActive, isPending}) => (isPending ? 'pending' : isActive ? 'active' : '')}
-					>
-						{intl.formatMessage(messages.aboutMe)}
-					</NavLink>
+					<Link href="/about-me">{intl.formatMessage(messages.aboutMe)}</Link>
 				</li>
 			</ul>
 		</nav>

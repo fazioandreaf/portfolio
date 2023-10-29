@@ -1,0 +1,24 @@
+.loading {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--grey-dark, #1b1f22);
+
+    .logo {
+        width: min-content;
+    }
+}
+
+.main {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	min-height: calc(100vh - var(--header-height));
+	background: var(--grey-dark);
+}

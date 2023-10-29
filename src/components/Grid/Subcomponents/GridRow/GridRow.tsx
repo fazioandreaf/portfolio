@@ -3,11 +3,11 @@ import cn from 'classnames';
 
 import {IGridRowProps} from './IGridRow';
 
-import './GridRow.scss';
+import styles from  './GridRow.module.scss';
 
 const GridRow = ({classNames, center, style, children}: IGridRowProps) => {
 	const attrs: {className: string; style?: React.CSSProperties} = {
-		className: cn('row', classNames, {center: center}),
+		className: cn(styles['row'], classNames, {center: center}),
 	};
 
 	if (style) {
