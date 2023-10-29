@@ -7,7 +7,8 @@
 		"baseUrl": "./",
 		"paths": {
 			"baseComponents/*": ["src/components/*"],
-			"baseAssets/*": ["src/assets/*"]
+			"baseAssets/*": ["src/assets/*"],
+			"basePublic/*": ["public/*"]
 		},
 		"resolveJsonModule": true,
 		"allowJs": true,
@@ -23,5 +24,5 @@
 		"incremental": true
 	},
 	"exclude": ["node_modules"],
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/downloadPdf.js"]
 }

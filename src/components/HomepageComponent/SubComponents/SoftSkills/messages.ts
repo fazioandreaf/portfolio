@@ -5,28 +5,9 @@ export default defineMessages({
 		id: 'softSkills',
 		defaultMessage: 'Soft skills',
 	},
-	communicative: {
-		id: 'communicative',
-		defaultMessage: 'Communicative',
-	},
-	spirit: {
-		id: 'spirit',
-		defaultMessage: 'Adaptive spirit',
-	},
-	decision: {
-		id: 'decision',
-		defaultMessage: 'Analyst and decision marking',
-	},
-	goal: {
-		id: 'goal',
-		defaultMessage: 'Goal orientation',
-	},
-	cooperative: {
-		id: 'cooperative',
-		defaultMessage: 'Cooperative',
-	},
-	leadership: {
-		id: 'leadership',
-		defaultMessage: 'Leadership',
+	softSkillsList: {
+		id: 'softSkillsList',
+		defaultMessage:
+			'<li>Communicative</li><li>Adaptive spirit</li><li>Analyst and decision marking</li><li>Goal orientation</li><li>Cooperative</li><li>Leadership</li>',
 	},
 });

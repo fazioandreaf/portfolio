@@ -5,24 +5,8 @@ export default defineMessages({
 		id: 'hardSkills',
 		defaultMessage: 'Hard skills',
 	},
-	react: {
-		id: 'react',
-		defaultMessage: 'React',
-	},
-	redux: {
-		id: 'redux',
-		defaultMessage: 'Redux',
-	},
-	sfcc: {
-		id: 'sfcc',
-		defaultMessage: 'SFCC',
-	},
-	node: {
-		id: 'node',
-		defaultMessage: 'Node',
-	},
-	api: {
-		id: 'api',
-		defaultMessage: 'ReactAPI & GraphQL',
+	hardSkillsList: {
+		id: 'hardSkillsList',
+		defaultMessage: '<li>React</li><li>Redux</li><li>SFCC</li><li>Node</li><li>ReactAPI & GraphQL</li>',
 	},
 });

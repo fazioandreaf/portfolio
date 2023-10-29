@@ -10,11 +10,9 @@ const HardSkills = () => {
 		<div className="skills">
 			<h3>{intl.formatMessage(messages.hardSkills)}</h3>
 			<ul>
-				<li>{intl.formatMessage(messages.react)}</li>
-				<li>{intl.formatMessage(messages.redux)}</li>
-				<li>{intl.formatMessage(messages.sfcc)}</li>
-				<li>{intl.formatMessage(messages.node)}</li>
-				<li>{intl.formatMessage(messages.api)}</li>
+				{intl.formatMessage(messages.hardSkillsList, {
+					li: (chunk: any) => <li>{chunk}</li>,
+				})}
 			</ul>
 		</div>
 	);

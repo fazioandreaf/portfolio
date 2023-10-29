@@ -22,10 +22,7 @@ const HomepageComponent = () => {
 				<Grid.Row>
 					<Grid.Column xs={12} md={10} classNames={styles['main__slogan']}>
 						<p>
-							{intl.formatMessage(messages.firstPhrase, {
-								span: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
-							})}
-							{intl.formatMessage(messages.secondPhrase, {
+							{intl.formatMessage(messages.homepageSlogan, {
 								span: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
 							})}
 						</p>

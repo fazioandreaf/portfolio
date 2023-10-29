@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext, ReactNode} from 'react';
 import {IntlProvider} from 'react-intl';
 import {Titillium_Web} from 'next/font/google';
+import Head from 'next/head';
 import cn from 'classnames';
 
 import Header from '../Header';

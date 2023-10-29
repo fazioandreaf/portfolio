@@ -12,12 +12,9 @@ const SoftSkills = () => {
 		<div className={styles['skills']}>
 			<h3>{intl.formatMessage(messages.softSkills)}</h3>
 			<ul>
-				<li>{intl.formatMessage(messages.leadership)}</li>
-				<li>{intl.formatMessage(messages.cooperative)}</li>
-				<li>{intl.formatMessage(messages.goal)}</li>
-				<li>{intl.formatMessage(messages.decision)}</li>
-				<li>{intl.formatMessage(messages.spirit)}</li>
-				<li>{intl.formatMessage(messages.communicative)}</li>
+				{intl.formatMessage(messages.softSkillsList, {
+					li: (chunk: any) => <li>{chunk}</li>,
+				})}
 			</ul>
 		</div>
 	);

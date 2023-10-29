@@ -1,16 +1,11 @@
 const messages = {
 	contact: 'Contatti',
 	aboutMe: 'Chi Sono',
-	firstPhrase: 'Oltre ad essere uno <span>sviluppatore</span>, sono anche un <span>ingegnere</span>.\n ',
-	secondPhrase:
-		"Sin dai tempi della scuola, ho una forte passione per l'informatica e la tecnologia con un obiettivo chiaro in mente:\nmassimizzare il potenziale degli <span>strumenti</span> a disposizione e migliorare i <span>processi</span>.",
+	homepageSlogan:
+		"Oltre ad essere uno <span>sviluppatore</span>, sono anche un <span>ingegnere</span>.\n Sin dai tempi della scuola, ho una forte passione per l'informatica e la tecnologia con un obiettivo chiaro in mente:\nmassimizzare il potenziale degli <span>strumenti</span> a disposizione e migliorare i <span>processi</span>.",
 	softSkills: 'Competenze Trasversali',
-	communicative: 'Comunicativo',
-	spirit: 'Spirito Adattivo',
-	decision: 'Analisi e Decisioni',
-	goal: 'Orientato agli Obiettivi',
-	cooperative: 'Cooperativo',
-	leadership: 'Leadership',
+	softSkillsList:
+		'<li>Comunicativo</li><li>Spirito Adattivo</li><li>Analisi e Decisioni</li><li>Orientato agli Obiettivi</li><li>Cooperativo</li><li>Leadership</li>',
 	project: 'Ultimo Progetto',
 	education: 'Formazione',
 	experience: 'Esperienza Lavorativa',
