@@ -46,8 +46,8 @@ const Wrapper = ({children}: {children: ReactNode}) => {
 const LayoutRoot = ({children}: {children: ReactNode}) => {
 	return (
 		<LocaleCtxProvider>
-			<HeadTag />
-			<Wrapper>{children}</Wrapper>
+			<Wrapper>
+				{children}</Wrapper>
 		</LocaleCtxProvider>
 	);
 };
