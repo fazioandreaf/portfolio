@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import {useIntl} from 'react-intl';
 import MediaQuery from 'react-responsive';
 import Image from 'next/image';
