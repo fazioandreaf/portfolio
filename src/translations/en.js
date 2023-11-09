@@ -5,9 +5,9 @@ const messages = {
 		'In addition to being a <span>developer</span>, I am also an <span>engineer</span>.\n Since high school there has been a strong passion for computer science and technology with a clear goal in mind: \n\n to maximize the potential of the <span>tools</span> at hand and improve <span>processes</span>.',
 	softSkills: 'Soft skills',
 	softSkillsList:
-		'<li>Communicative</li><li>Adaptive spirit</li><li>Analyst and decision marking</li><li>Goal orientation</li><li>Cooperative</li><li>Leadership</li>',
+		'<li>Communicative</li><li>Adaptive spirit</li><li>Analyst and decision making</li><li>Goal orientation</li><li>Cooperative</li><li>Leadership</li>',
 	hardSkillsList: '<li>React</li><li>Redux</li><li>SFCC</li><li>Node</li><li>ReactAPI & GraphQL</li>',
-	cvTitle: 'Download the cv in the language of your choice',
+	cvTitle: 'Download the CV in the language of your choice',
 	project: 'Last project',
 	education: 'Education',
 	experience: 'Work Experience',

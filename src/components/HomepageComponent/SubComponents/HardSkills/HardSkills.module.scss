@@ -1,0 +1,24 @@
+.skills {
+	li {
+		position: relative;
+		margin-left: 15px;
+
+		&:before {
+			content: '';
+            position: absolute;
+            text-decoration: underline;
+            inset-block-start: 40%;
+            inset-inline-start: -15px;
+			width: 5px;
+			height: 5px;
+            transform: translate(50%, -50%);
+            background-color: var(--green-light);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+		}
+
+		&:hover:before {
+            animation: pulse 1s infinite;
+		}
+	}
+}

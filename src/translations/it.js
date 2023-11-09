@@ -6,6 +6,8 @@ const messages = {
 	softSkills: 'Competenze Trasversali',
 	softSkillsList:
 		'<li>Comunicativo</li><li>Spirito Adattivo</li><li>Analisi e Decisioni</li><li>Orientato agli Obiettivi</li><li>Cooperativo</li><li>Leadership</li>',
+	hardSkillsList: '<li>React</li><li>Redux</li><li>SFCC</li><li>Node</li><li>ReactAPI & GraphQL</li>',
+	cvTitle: 'Scarica il CV nella lingua che preferisci',
 	project: 'Ultimo Progetto',
 	education: 'Formazione',
 	experience: 'Esperienza Lavorativa',
