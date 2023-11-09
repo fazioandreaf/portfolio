@@ -20,7 +20,7 @@ const Navigation = ({isOpen = false, handleOpen}: {isOpen?: boolean; handleOpen:
 			<MediaQuery maxWidth={778}>
 				<HamburgerMenu onClick={() => handleOpen(!isOpen)} isOpen={isOpen} />
 			</MediaQuery>
-			<ul className={`${isMobile && isOpen ? 'open' : 'closed'}`}>
+			<ul className={`${isMobile && isOpen ? styles['open'] : styles['closed']}`}>
 				<li>
 					<LocaleSelector />
 				</li>

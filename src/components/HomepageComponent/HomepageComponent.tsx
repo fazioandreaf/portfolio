@@ -45,7 +45,7 @@ const HomepageComponent = () => {
 						</div>
 					</Grid.Column>
 					<MediaQuery maxWidth={767}>
-						<Grid.Column xs={12} md={4} classNames="main__skills">
+						<Grid.Column xs={12} md={4} classNames={styles['main__skills']}>
 							<HardSkills />
 							<SoftSkills />
 						</Grid.Column>
