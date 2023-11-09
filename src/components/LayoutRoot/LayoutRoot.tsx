@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useContext, ReactNode} from 'react';
 import {IntlProvider} from 'react-intl';
 import {Titillium_Web} from 'next/font/google';
-import Head from 'next/head';
+import HeadTag from './HeadTag/HeadTag';
 import cn from 'classnames';
 
 import Header from '../Header';
@@ -46,6 +46,7 @@ const Wrapper = ({children}: {children: ReactNode}) => {
 const LayoutRoot = ({children}: {children: ReactNode}) => {
 	return (
 		<LocaleCtxProvider>
+			<HeadTag />
 			<Wrapper>{children}</Wrapper>
 		</LocaleCtxProvider>
 	);
