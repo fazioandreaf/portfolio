@@ -4,6 +4,7 @@ module.exports = {
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
+	transpilePackages: ['three'],
 	images: {unoptimized: true},
 	webpack: (config) => {
 		config.module.rules.push({
