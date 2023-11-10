@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import {useIntl} from 'react-intl';
 import Image from 'next/image';
 import cn from 'classnames';
@@ -19,27 +19,38 @@ import degreeMe from 'baseAssets/degree-me.png';
 
 import styles from './AboutMe.module.scss';
 
+const ChevronDown = () => {
+	return (
+		<div className={styles['chevron-down']}>
+			<span className={styles['left-line']} />
+			<span className={styles['right-line']} />
+		</div>
+	);
+};
+
 const AboutMe = () => {
 	const intl = useIntl();
 	const [isOpenObj, setIsOpenObj] = useState<{
-		project: boolean;
-		education: boolean;
-		experience: boolean;
+		project?: boolean;
+		education?: boolean;
+		experience?: boolean;
 	}>({project: true, education: false, experience: false});
 
-	const handleOpen = useCallback(
-		(id: keyof typeof isOpenObj) => {
-			setIsOpenObj(Object.assign({}, isOpenObj, {[id]: !isOpenObj[id]}));
-		},
-		[isOpenObj],
-	);
+	const handleOpen = (id: keyof typeof isOpenObj) => {
+		setIsOpenObj(Object.assign({}, {[id]: !isOpenObj[id]}));
+	};
 	return (
 		<div className={styles['about-me']}>
-			<h2 onClick={() => handleOpen('project')} className={cn({close: !isOpenObj.project})}>
+			<h2 onClick={() => handleOpen('project')} className={cn({[styles['close']]: !isOpenObj.project})}>
 				{intl.formatMessage({id: 'project'})}
-				<span className="material-symbols-outlined">expand_more</span>
+				<ChevronDown />
 			</h2>
-			<Grid classNames={`grid ${isOpenObj['project'] ? 'grid-open' : 'grid-closed'}`}>
+			<Grid
+				classNames={cn(styles['grid'], {
+					[styles['grid-open']]: isOpenObj['project'],
+					[styles['grid-closed']]: !isOpenObj['project'],
+				})}
+			>
 				<Grid.Row>
 					<Grid.Column xs={12} lg={6} classNames={styles['video-wrapper']}>
 						<Video videoId="CL_DMABCj58" iframeClassName="lncc-video" />
@@ -62,11 +73,16 @@ const AboutMe = () => {
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
-			<h2 onClick={() => handleOpen('experience')} className={cn({close: !isOpenObj.experience})}>
+			<h2 onClick={() => handleOpen('experience')} className={cn({[styles['close']]: !isOpenObj.experience})}>
 				{intl.formatMessage({id: 'experience'})}
-				<span className="material-symbols-outlined">expand_more</span>
+				<ChevronDown />
 			</h2>
-			<Grid classNames={`grid ${isOpenObj['experience'] ? 'grid-open' : 'grid-closed'}`}>
+			<Grid
+				classNames={cn(styles['grid'], {
+					[styles['grid-open']]: isOpenObj['experience'],
+					[styles['grid-closed']]: !isOpenObj['experience'],
+				})}
+			>
 				<Grid.Row center>
 					<Grid.Column xs={12} lg={6}>
 						<div className={styles['experience-imgs']}>
@@ -79,11 +95,16 @@ const AboutMe = () => {
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
-			<h2 onClick={() => handleOpen('education')} className={cn({close: !isOpenObj.education})}>
+			<h2 onClick={() => handleOpen('education')} className={cn({[styles['close']]: !isOpenObj.education})}>
 				{intl.formatMessage({id: 'education'})}
-				<span className="material-symbols-outlined">expand_more</span>
+				<ChevronDown />
 			</h2>
-			<Grid classNames={`grid ${isOpenObj['education'] ? 'grid-open' : 'grid-closed'}`}>
+			<Grid
+				classNames={cn(styles['grid'], {
+					[styles['grid-open']]: isOpenObj['education'],
+					[styles['grid-closed']]: !isOpenObj['education'],
+				})}
+			>
 				<Grid.Row center>
 					<Grid.Column xs={12} lg={6}>
 						<div className={styles['education-imgs']}>

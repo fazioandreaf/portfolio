@@ -1,8 +1,10 @@
+@import './../../style/mixins.module.scss';
+
 .about-me {
     width: 100%;
 
     .grid {
-        transition: 0.3s all ease-in-out;
+        transition: max-height 0.3s ease-in-out;
         overflow: hidden;
 
         &-closed {
@@ -10,9 +12,8 @@
         }
 
         &-open {
-            @media (max-width: 768px) {
-                max-height: 300vh;
-            }
+            max-height: 60vh;
+            overflow: auto;
         }
     }
 
@@ -22,6 +23,10 @@
         :global iframe {
             width: 100%;
         }
+    }
+
+    .close .chevron-down {
+        transform: translateY(6px) rotate(180deg);
     }
 
     :global {
@@ -36,17 +41,14 @@
                 transform: translateY(-50%) rotate(0deg);
                 transition: 0.3s all ease-in-out;
             }
-    
-            &.close span {
-                transform: translateY(-50%) rotate(180deg);
-            }
+
         }
-    
+
         h3 {
             margin-block-end: 10px;
             text-transform: uppercase;
         }
-    
+
         h4 {
             margin: 5px 0;
         }
@@ -77,5 +79,32 @@
                 width: 100%
             }
         }
+    }
+}
+
+.chevron-down {
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+    width: 24.5px;
+    height: 20px;
+    transition: all 0.3s ease-in;
+    transform: translateY(0);
+
+    .left-line,
+    .right-line {
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 15px;
+        height: 1px;
+        background-color: var(--green-light);
+        transform: rotate(45deg);
+    }
+
+    .right-line {
+        left: inherit;
+        right: 0;
+        transform: rotate(-45deg);
     }
 }

@@ -31,3 +31,22 @@
 	}
 	}
 }
+
+@mixin scrollbar {
+	&::-webkit-scrollbar {
+		width: 5px; /* Larghezza della scrollbar */
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--green-light); /* Colore del pulsante */
+		border-radius: 5px; /* Bordo arrotondato */
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: var('--grey-dark'); /* Colore della traccia */
+	}
+
+	@media (max-width: 768px) {
+		max-height: 300vh;
+	}
+}
