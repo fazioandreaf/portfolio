@@ -19,6 +19,7 @@
 		"file-loader": "^6.2.0",
 		"fs": "^0.0.1-security",
 		"lint": "^0.8.19",
+		"mini-css-extract-plugin": "^2.7.6",
 		"path": "^0.12.7",
 		"prettier": "^3.0.3",
 		"react-intl": "^6.5.1",

@@ -2,7 +2,11 @@ const path = require('path');
 
 module.exports = {
 	sassOptions: {
-		includePaths: [path.join(__dirname, 'styles')],
+		includePaths: [path.join(__dirname, 'src/style/mixins')],
+	},
+	i18n: {
+		locales: ['en', 'it'],
+		defaultLocale: 'it',
 	},
 	images: {unoptimized: true},
 	webpack: (config) => {
@@ -18,5 +22,5 @@ module.exports = {
 
 		return config;
 	},
-	output: 'export',
+	// output: 'export',
 };

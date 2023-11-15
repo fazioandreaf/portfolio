@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {useRouter} from 'next/router';
 import cn from 'classnames';
 
 import LocaleCtx from './../../context';
@@ -7,9 +8,11 @@ import styles from './LocaleSelector.module.scss';
 
 const LocaleSelector = () => {
 	const context = useContext(LocaleCtx);
+	const router = useRouter();
 
 	const handlerLocaleLS = (locale: string) => {
 		context.handleLocale(locale);
+		router.push(router.pathname, router.pathname, {locale});
 	};
 
 	return (
