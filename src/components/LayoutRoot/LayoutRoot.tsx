@@ -2,6 +2,7 @@ import React, {useState, useEffect, useContext, ReactNode} from 'react';
 import {IntlProvider} from 'react-intl';
 import {Titillium_Web} from 'next/font/google';
 import Head from 'next/head';
+import Script from 'next/script';
 import cn from 'classnames';
 
 import Header from '../Header';
@@ -50,12 +51,25 @@ const LayoutRoot = ({children}: {children: ReactNode}) => {
 				<Head>
 					<meta property="og:title" content="Andrea Fazio - Full Stack Developer" key="title" />
 					<meta property="og:image" content="./src/assets/ln-account.png" />
-					<meta property="og:description" content="Andrea Fazio Portfolio -  Full Stack Developer - SF developer" />
+					<meta
+						property="og:description"
+						content="Andrea Fazio Portfolio -  Full Stack Developer - SF developer"
+					/>
 					<meta property="og:url" content="https://fazioandrea.me" />
 					<meta name="theme-color" content="#000000" />
 					<meta name="description" content="Andrea Fazio Portfolio -  Full Stack Developer - SF developer" />
 					<title> Andrea Fazio Portfolio - Full Stack Develope</title>
 				</Head>
+				<Script src="https://www.googletagmanager.com/gtag/js?id=G-TXXNFPNEME" />
+				<Script id="google-analytics">
+					{`
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+
+						gtag('config', 'G-TXXNFPNEME');
+					`}
+				</Script>
 				{children}
 			</Wrapper>
 		</LocaleCtxProvider>
