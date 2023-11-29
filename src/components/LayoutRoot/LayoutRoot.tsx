@@ -52,7 +52,7 @@ const LayoutRoot = ({children}: {children: ReactNode}) => {
 						property="og:description"
 						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
 					/>
-					<meta property="og:image" content="./ln-account_og.jpeg" />
+					<meta property="og:image" content="https://fazioandrea.me/ln-account_og.jpeg" />
 
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta property="twitter:domain" content="fazioandrea.me" />
@@ -62,7 +62,7 @@ const LayoutRoot = ({children}: {children: ReactNode}) => {
 						name="twitter:description"
 						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
 					/>
-					<meta name="twitter:image" content="./ln-account_og.jpeg" />
+					<meta name="twitter:image" content="https://fazioandrea.me/ln-account_og.jpeg" />
 				</Head>
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-TXXNFPNEME" />
 				<Script id="google-analytics">
