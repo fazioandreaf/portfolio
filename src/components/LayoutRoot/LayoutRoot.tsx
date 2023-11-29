@@ -63,6 +63,7 @@ const LayoutRoot = ({children}: {children: ReactNode}) => {
 						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
 					/>
 					<meta name="twitter:image" content="https://fazioandrea.me/ln-account_og.jpeg" />
+					<meta name="google-site-verification" content="_twn4IdWsWZ98TeQbNIUo70awhRAvn3hifSE31g9rr8" />
 				</Head>
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-TXXNFPNEME" />
 				<Script id="google-analytics">
