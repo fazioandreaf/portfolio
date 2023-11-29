@@ -37,7 +37,7 @@ const HomepageComponent = () => {
 					<Grid.Column xs={6} md={2} classNames={styles['main__profile-wrapper']}>
 						<div className={styles['profile-wrapper']}>
 							<Image
-								src="./ln-account.png"
+								src="./ln-account.webp"
 								alt="Mine Profile Image"
 								width={100}
 								height={100}
