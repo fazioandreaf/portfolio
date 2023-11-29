@@ -32,4 +32,10 @@ const Contacts = () => {
 	);
 };
 
+export async function getStaticProps() {
+	return {
+		props: {},
+	};
+}
+
 export default Contacts;

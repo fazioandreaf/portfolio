@@ -6,7 +6,6 @@ import Script from 'next/script';
 import cn from 'classnames';
 
 import Header from '../Header';
-import Logo from '../Logo';
 
 // If loading a variable font, you don't need to specify the font weight
 const titilliumRegular = Titillium_Web({
@@ -23,24 +22,15 @@ import LocaleCtx from './../../context';
 
 const Wrapper = ({children}: {children: ReactNode}) => {
 	const context = useContext(LocaleCtx);
-	const [domLoaded, setDomLoaded] = useState(false);
 
+	//ester egg
 	useEffect(() => console.log(photoASCII), []);
 
-	useEffect(() => {
-		setDomLoaded(true);
-		return () => setDomLoaded(false);
-	}, []);
-
-	return context && domLoaded ? (
+	return (
 		<IntlProvider locale={context.locale} messages={require(`./../../translations/${context.locale}`).default}>
 			<Header />
 			<main className={cn(styles['main'], titilliumRegular.className)}>{children}</main>
 		</IntlProvider>
-	) : (
-		<div className={styles['loading']}>
-			<Logo />
-		</div>
 	);
 };
 
@@ -49,16 +39,30 @@ const LayoutRoot = ({children}: {children: ReactNode}) => {
 		<LocaleCtxProvider>
 			<Wrapper>
 				<Head>
-					<meta property="og:title" content="Andrea Fazio - Full Stack Developer" key="title" />
-					<meta property="og:image" content="./src/assets/ln-account.png" />
+					<title>Andrea Fazio - Fullstack Developer</title>
+					<meta
+						name="description"
+						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
+					/>
+
+					<meta property="og:url" content="https://fazioandrea.me/" />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content="Andrea Fazio - Fullstack Developer" />
 					<meta
 						property="og:description"
-						content="Andrea Fazio Portfolio -  Full Stack Developer - SF developer"
+						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
 					/>
-					<meta property="og:url" content="https://fazioandrea.me" />
-					<meta name="theme-color" content="#000000" />
-					<meta name="description" content="Andrea Fazio Portfolio -  Full Stack Developer - SF developer" />
-					<title> Andrea Fazio Portfolio - Full Stack Develope</title>
+					<meta property="og:image" content="./ln-account_og.jpeg" />
+
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta property="twitter:domain" content="fazioandrea.me" />
+					<meta property="twitter:url" content="https://fazioandrea.me/" />
+					<meta name="twitter:title" content="Andrea Fazio - Fullstack Developer" />
+					<meta
+						name="twitter:description"
+						content="Hi. I am Andrea fazio, a full stack developer who is passionate about web"
+					/>
+					<meta name="twitter:image" content="./ln-account_og.jpeg" />
 				</Head>
 				<Script src="https://www.googletagmanager.com/gtag/js?id=G-TXXNFPNEME" />
 				<Script id="google-analytics">

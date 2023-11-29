@@ -9,6 +9,14 @@
 	@include scrollbar;
 }
 
+.d-none {
+	display: none;
+	height: 0;
+	width: 0;
+	visibility: none;
+	opacity: 0;
+}
+
 :root {
 	--font-secondary: 'PixelifySans-Regular', sans-serif;
 	--font-secondary--bold: 'PixelifySans-Bold', sans-serif;
