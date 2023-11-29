@@ -36,6 +36,11 @@ html {
 }
 
 html,
+body {
+	background-color: var(--grey-dark, #1b1f22);
+}
+
+html,
 body,
 a {
 	color: white;
