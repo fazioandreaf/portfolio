@@ -1,4 +1,4 @@
-import React, from 'react';
+import React from 'react';
 import {useIntl} from 'react-intl';
 import Image from 'next/image';
 import cn from 'classnames';
