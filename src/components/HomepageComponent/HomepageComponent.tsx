@@ -1,6 +1,5 @@
-import React from 'react';
+import React, from 'react';
 import {useIntl} from 'react-intl';
-import {useMediaQuery} from 'react-responsive';
 import Image from 'next/image';
 import cn from 'classnames';
 
@@ -15,9 +14,6 @@ import messages from './messages';
 
 const HomepageComponent = () => {
 	const intl = useIntl();
-	const isDesktopOrLaptop = useMediaQuery({
-		query: '(min-width: 768px)',
-	});
 
 	return (
 		<>
@@ -29,7 +25,7 @@ const HomepageComponent = () => {
 								span: (chunk: any) => <HighlightedSpan color="green">{chunk}</HighlightedSpan>,
 							})}
 						</p>
-						<div className={cn(styles['main__skills'], {'d-none': !isDesktopOrLaptop})}>
+						<div className={cn(styles['main__skills'])}>
 							<HardSkills />
 							<SoftSkills />
 						</div>
@@ -45,10 +41,6 @@ const HomepageComponent = () => {
 								loading="lazy"
 							/>
 						</div>
-					</Grid.Column>
-					<Grid.Column xs={12} md={4} classNames={cn(styles['main__skills'], {'d-none': isDesktopOrLaptop})}>
-						<HardSkills />
-						<SoftSkills />
 					</Grid.Column>
 				</Grid.Row>
 			</Grid>
