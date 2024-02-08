@@ -1,0 +1,8 @@
+.technical-interview {
+    &__button {
+        position: absolute;
+        top: 10%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%)
+    }
+}

@@ -1,0 +1,23 @@
+.rspp {
+    &--wrapper {
+        margin-block: 20px;
+        flex: 1;
+        position: relative;
+    }
+
+    &--user-choice {
+        display: flex;
+        gap: 5px;
+
+        :global {
+            span:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &--info {
+        position: absolute;
+        inset-block-end: 0;
+    }
+}

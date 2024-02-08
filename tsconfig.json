@@ -9,7 +9,9 @@
 			"baseComponents/*": ["src/components/*"],
 			"baseStyle/*": ["src/style/*"],
 			"baseAssets/*": ["src/assets/*"],
-			"basePublic/*": ["public/*"]
+			"basePublic/*": ["public/*"],
+			"baseClasses/*": ["src/classes/*"],
+			"baseUtils/*": ["src/utils/*"]
 		},
 		"resolveJsonModule": true,
 		"allowJs": true,
@@ -22,8 +24,13 @@
 		"skipLibCheck": true,
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"noEmit": true,
-		"incremental": true
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
 	"exclude": ["node_modules"],
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/downloadPdf.js"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/downloadPdf.js", ".next/types/**/*.ts"]
 }
