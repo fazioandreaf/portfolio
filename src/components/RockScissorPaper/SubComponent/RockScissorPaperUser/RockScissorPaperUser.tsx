@@ -6,7 +6,7 @@ const RockScissorPaperUser = () => {
 	const context = useContext(GameCtx);
 	const [loading, setLoading] = useState(true);
 	const [lastSubmittedUser, setLastSubmittedUser] = useState('');
-	const userText = useRef<HTMLInputElement>();
+	const userText = useRef<any>();
 
 	const handleGetUser = async (user: string) => {
 		context.setError('');

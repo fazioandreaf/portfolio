@@ -10,7 +10,7 @@ const TechnicalInterview = () => {
 	const [toggleVisibility, setToggleVisibility] = useState(false);
 	const [allowed, setAllowed] = useState('false');
 	const [error, setError] = useState('');
-	const inpRef = useRef<HTMLInputElement>();
+	const inpRef = useRef<any>();
 	const password = process.env.NEXT_PUBLIC_TECHNICAL_INTERVIEW_PASSWORD;
 
 	useEffect(() => {
@@ -42,11 +42,7 @@ const TechnicalInterview = () => {
 			>
 				Mostra il {toggleVisibility ? 'primo' : 'secondo'} gioco
 			</button>
-			{!toggleVisibility ? (
-				<FooBar />
-			) : (
-				<RockScissorPaper />
-			)}
+			{!toggleVisibility ? <FooBar /> : <RockScissorPaper />}
 		</div>
 	) : (
 		<div className={styles['password-wrapper']}>
