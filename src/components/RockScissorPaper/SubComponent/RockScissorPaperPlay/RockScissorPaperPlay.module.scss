@@ -1,7 +1,5 @@
 .rspp {
     &--wrapper {
-        margin-block: 20px;
-        flex: 1;
         position: relative;
     }
 
@@ -17,7 +15,6 @@
     }
 
     &--info {
-        position: absolute;
         inset-block-end: 0;
     }
 }

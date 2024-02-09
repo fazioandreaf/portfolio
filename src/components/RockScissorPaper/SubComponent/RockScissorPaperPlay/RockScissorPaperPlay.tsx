@@ -1,12 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import cn from 'classnames';
 
 import Player from 'baseClasses/Player';
 import {getMathRandom} from 'baseUtils/utils';
+import GameCtx from 'baseComponents/RockScissorPaper/context';
 
 import styles from './RockScissorPaperPlay.module.scss';
 
-const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolean}) => {
+interface IRockScissorPaperPlayProps {
+	players: Player[];
+	isPC?: boolean;
+}
+
+const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
+	const context = useContext(GameCtx);
 	const [winner, setWinner] = useState('');
 	const [player1Choice, setPlayer1Choice] = useState<null | Player>(null);
 	const [player2Choice, setPlayer2Choice] = useState<null | Player>(null);
@@ -28,20 +35,27 @@ const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolea
 
 	useEffect(() => {
 		let label = '';
+		let fieldToUpdate = '';
 
 		if (player1Choice && player2Choice) {
 			switch (true) {
 				case player1Choice.isWeakTo(player2Choice):
 					label = player2Choice.getName();
+					fieldToUpdate = 'pc_wins';
 
 					break;
 				case player2Choice.isWeakTo(player1Choice):
 					label = player1Choice.getName();
+					fieldToUpdate = 'user_wins';
 
 					break;
 				default:
 					label = 'Pareggio';
 			}
+		}
+
+		if (!!fieldToUpdate && !!context.currentUser) {
+			handleUpdateUser(context.currentUser.name, fieldToUpdate);
 		}
 
 		setWinner(label);
@@ -57,6 +71,18 @@ const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolea
 		}
 	};
 
+	const handleUpdateUser = async (name: string, field: string) => {
+		if (context.currentUser) {
+			const value: number = context.currentUser[field] + 1;
+			const userJSON = await fetch(`api/update-user?name=${name}&field=${field}&value=${value}`);
+			const {result} = await userJSON.json();
+
+			if (result === 'done') {
+				context.setCurrentUser(Object.assign({}, context.currentUser, {[field]: value}));
+			}
+		}
+	};
+
 	if (!players.length) {
 		return null;
 	}
@@ -64,8 +90,8 @@ const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolea
 	return (
 		<div className={styles['rspp--wrapper']}>
 			<div>
-				<div className={cn({['d-none']: isPC | (!!player1Choice && !!player1Choice)})}>
-					<label htmlFor="">Sceglie una forma</label>
+				<div className={cn({['d-none']: isPC || (!!player1Choice && !!player2Choice)})}>
+					<h4>Sceglie una forma</h4>
 					<div className={styles['rspp--user-choice']}>
 						{players.map((player, index) => (
 							<span
@@ -83,9 +109,12 @@ const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolea
 					</div>
 				</div>
 
-				<div className={cn({['d-none']: isPC || !player1Choice || (!!player1Choice && !!player2Choice)})}>
-					<button onClick={handleConfirmed}>Confermi la tua Scelta?</button>
-				</div>
+				<button
+					onClick={handleConfirmed}
+					className={cn({['d-none']: isPC || !player1Choice || (!!player1Choice && !!player2Choice)})}
+				>
+					Confermi la tua Scelta?
+				</button>
 			</div>
 
 			<div className={styles['rspp--info']}>
@@ -101,7 +130,7 @@ const RockScissorPaperPlay = ({players, isPC}: {players: Player[]; isPC?: boolea
 				</div>
 
 				<div className={cn({['d-none']: !winner})}>
-					il vincitore é <span className="active">{winner}</span>
+					Il vincitore é <span className="active">{winner}</span>
 				</div>
 			</div>
 		</div>

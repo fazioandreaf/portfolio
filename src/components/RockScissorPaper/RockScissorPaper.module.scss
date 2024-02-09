@@ -3,8 +3,9 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        min-height: 300px;
+        min-height: 500px;
         min-width: 300px;
+        gap: 20px;
 
         :global {
             button,
@@ -25,6 +26,9 @@
         position: relative;
         inset-block-end: 0;
         width: 100%;
-        margin-block-start: 20px;
     }
+}
+
+.error-label {
+    color: red;
 }

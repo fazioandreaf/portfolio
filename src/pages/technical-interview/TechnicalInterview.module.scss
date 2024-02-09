@@ -6,3 +6,9 @@
         transform: translateX(-50%)
     }
 }
+
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

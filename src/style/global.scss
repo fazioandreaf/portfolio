@@ -13,7 +13,7 @@
 	display: none;
 	height: 0;
 	width: 0;
-	visibility: none;
+	visibility: hidden;
 	opacity: 0;
 }
 
@@ -103,6 +103,14 @@ button {
 		height: 100%;
 		border-top-color: white;
 	}
+}
+
+input[type='text'] {
+	background-color: transparent;
+	padding: 10px 4px;
+	color: white;
+	border: none;
+	border-block-end: 1px dashed white;
 }
 
 @keyframes pulse {

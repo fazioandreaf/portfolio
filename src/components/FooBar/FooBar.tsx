@@ -8,7 +8,7 @@ const FooBar = () => {
 	const handleFooBar = useCallback(() => {
 		if (!result.length) {
 			const numbers = Array(100)
-				.fill(0)
+				.fill(null)
 				.map((_, index) => {
 					const correctIndex = index + 1;
 					let tempValue = '';
