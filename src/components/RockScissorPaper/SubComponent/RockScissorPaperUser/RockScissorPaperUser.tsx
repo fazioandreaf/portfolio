@@ -1,4 +1,5 @@
-import React, {useState, useRef, useContext} from 'react';
+import React, {useState, useRef, useContext, useEffect} from 'react';
+import cn from 'classnames';
 
 import GameCtx from 'baseComponents/RockScissorPaper/context';
 
@@ -7,14 +8,14 @@ import styles from './RockScissorPaperUser.module.scss';
 const RockScissorPaperUser = () => {
 	const context = useContext(GameCtx);
 	const [loading, setLoading] = useState(true);
-	const [lastSubmittedUser, setLastSubmittedUser] = useState('');
+	const [lastUpdate, setLustUpdate] = useState('');
 	const userText = useRef<any>();
 
 	const handleGetUser = async (user: string) => {
-		context.setError('');
+		context?.setError('');
 
 		if (user) {
-			if ((!!context.currentUser && user === context.currentUser.name) || lastSubmittedUser === user) {
+			if (!!context?.currentUser && user === context?.currentUser.name) {
 				context.setError('Inserisci un nome differente');
 			} else {
 				let userJSON;
@@ -32,12 +33,18 @@ const RockScissorPaperUser = () => {
 						.finally(() => setLoading(true));
 				}
 
-				context.setCurrentUser(userJSON);
+				context?.setCurrentUser(userJSON);
 			}
-
-			setLastSubmittedUser(user);
 		}
 	};
+
+	useEffect(() => {
+		setLustUpdate('user');
+	}, [context?.currentUser?.user_wins]);
+
+	useEffect(() => {
+		setLustUpdate('pc');
+	}, [context?.currentUser?.pc_wins]);
 
 	return (
 		<div className={styles['rspu']}>
@@ -47,6 +54,7 @@ const RockScissorPaperUser = () => {
 					<input id="nameText" type="text" ref={userText} />
 				</label>
 				<button
+					disabled={context?.isPC}
 					onClick={() => {
 						if (!!userText?.current?.value) {
 							handleGetUser(userText.current.value);
@@ -57,17 +65,26 @@ const RockScissorPaperUser = () => {
 				</button>
 			</div>
 
-			{loading && context.currentUser && (
+			{loading && context?.currentUser && (
 				<div className={styles['rspu--info-user']}>
 					<span>Nome utente: {context.currentUser?.name}</span>
 					<br />
-					<span>Vittorie utente: {context.currentUser?.user_wins}</span>
+					<span>
+						Vittorie utente:
+						<span className={cn({['active']: lastUpdate === 'user'})}>
+							{' '}
+							{context.currentUser?.user_wins}
+						</span>
+					</span>
 					<br />
-					<span>Vittore pc: {context.currentUser?.pc_wins}</span>
+					<span>
+						Vittore pc:
+						<span className={cn({['active']: lastUpdate === 'pc'})}> {context.currentUser?.pc_wins}</span>
+					</span>
 					<br />
 				</div>
 			)}
-			{!loading && <span>Loading</span>}
+			{!loading && <span>Loading...</span>}
 		</div>
 	);
 };

@@ -1,6 +1,8 @@
 import React, {useEffect, useState, useContext} from 'react';
 import cn from 'classnames';
 
+import {IUserProps} from 'baseComponents/RockScissorPaper/RockScissorPaper';
+
 import Player from 'baseClasses/Player';
 import {getMathRandom} from 'baseUtils/utils';
 import GameCtx from 'baseComponents/RockScissorPaper/context';
@@ -12,7 +14,7 @@ interface IRockScissorPaperPlayProps {
 	isPC?: boolean;
 }
 
-const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
+const RockScissorPaperPlay = ({players}: IRockScissorPaperPlayProps) => {
 	const context = useContext(GameCtx);
 	const [winner, setWinner] = useState('');
 	const [player1Choice, setPlayer1Choice] = useState<null | Player>(null);
@@ -23,7 +25,7 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 			return;
 		}
 
-		if (isPC) {
+		if (context?.isPC) {
 			setPlayer1Choice(players[0]);
 			setPlayer2Choice(players[1]);
 		}
@@ -31,11 +33,11 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 			setPlayer1Choice(null);
 			setPlayer2Choice(null);
 		};
-	}, [players, isPC]);
+	}, [players, context?.isPC]);
 
 	useEffect(() => {
 		let label = '';
-		let fieldToUpdate = '';
+		let fieldToUpdate: 'pc_wins' | 'user_wins' | '' = '';
 
 		if (player1Choice && player2Choice) {
 			switch (true) {
@@ -54,7 +56,7 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 			}
 		}
 
-		if (!!fieldToUpdate && !!context.currentUser) {
+		if (fieldToUpdate !== '' && !!context?.currentUser) {
 			handleUpdateUser(context.currentUser.name, fieldToUpdate);
 		}
 
@@ -71,26 +73,26 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 		}
 	};
 
-	const handleUpdateUser = async (name: string, field: string) => {
-		if (context.currentUser) {
-			const value: number = context.currentUser[field] + 1;
+	const handleUpdateUser = async (name: string, field: 'pc_wins' | 'user_wins') => {
+		if (context?.currentUser) {
+			const value: number = context?.currentUser[field] + 1;
 			const userJSON = await fetch(`api/update-user?name=${name}&field=${field}&value=${value}`);
 			const {result} = await userJSON.json();
 
 			if (result === 'done') {
-				context.setCurrentUser(Object.assign({}, context.currentUser, {[field]: value}));
+				context?.setCurrentUser(Object.assign({}, context?.currentUser, {[field]: value}));
 			}
 		}
 	};
 
-	if (!players.length) {
+	if (!players.length || context === null) {
 		return null;
 	}
 
 	return (
 		<div className={styles['rspp--wrapper']}>
 			<div>
-				<div className={cn({['d-none']: isPC || (!!player1Choice && !!player2Choice)})}>
+				<div className={cn({['d-none']: context.isPC || (!!player1Choice && !!player2Choice)})}>
 					<h4>Sceglie una forma</h4>
 					<div className={styles['rspp--user-choice']}>
 						{players.map((player, index) => (
@@ -108,13 +110,6 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 						))}
 					</div>
 				</div>
-
-				<button
-					onClick={handleConfirmed}
-					className={cn({['d-none']: isPC || !player1Choice || (!!player1Choice && !!player2Choice)})}
-				>
-					Confermi la tua Scelta?
-				</button>
 			</div>
 
 			<div className={styles['rspp--info']}>
@@ -133,6 +128,13 @@ const RockScissorPaperPlay = ({players, isPC}: IRockScissorPaperPlayProps) => {
 					Il vincitore é <span className="active">{winner}</span>
 				</div>
 			</div>
+
+			<button
+				onClick={handleConfirmed}
+				className={cn({['d-none']: context.isPC || !player1Choice || (!!player1Choice && !!player2Choice)})}
+			>
+				Confermi la tua Scelta?
+			</button>
 		</div>
 	);
 };

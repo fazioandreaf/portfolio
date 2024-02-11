@@ -33,11 +33,10 @@ const RockScissorPaper = () => {
 	const handleCleanGame = useCallback(() => {
 		setPlayers([]);
 		setError('');
-		setCurrentUser(undefined);
 	}, []);
 
 	return (
-		<GameCtx.Provider value={{currentUser, setCurrentUser, setError}}>
+		<GameCtx.Provider value={{currentUser, setCurrentUser, setError, isPC: versus === 'pc'}}>
 			<div className={styles['rock-scissor-paper--game-wrapper']}>
 				<h2>Rock Scissor Paper</h2>
 				<div className={styles['rock-scissor-paper--main']}>
@@ -49,6 +48,7 @@ const RockScissorPaper = () => {
 								className={cn({['active']: versus === 'user'})}
 								onClick={() => {
 									setVersus('user');
+									setCurrentUser(undefined);
 									handleCleanGame();
 								}}
 							>
@@ -58,6 +58,7 @@ const RockScissorPaper = () => {
 								className={cn({['active']: versus === 'pc'})}
 								onClick={() => {
 									setVersus('pc');
+									setCurrentUser(undefined);
 									handleCleanGame();
 								}}
 							>
@@ -84,7 +85,7 @@ const RockScissorPaper = () => {
 								5 scelte
 							</button>
 						</div>
-						<RockScissorPaperPlay players={players} isPC={versus === 'pc'} />
+						<RockScissorPaperPlay players={players} />
 					</div>
 				</div>
 				{error && <span className={styles['error-label']}>{error}</span>}

@@ -84,6 +84,7 @@ button {
     border: none;
     padding: 5px 10px;
 	position: relative;
+	transition: all 0.25s ease-out;
 
 
 		&::after {
@@ -102,6 +103,23 @@ button {
 	&:hover::after {
 		height: 100%;
 		border-top-color: white;
+	}
+
+	&:disabled {
+		border: none;
+		background-color: grey;
+
+		&::after {
+			border: none;
+		}
+
+		&:hover {
+			cursor: not-allowed;
+
+			&::after {
+				border: none;
+			}
+		}
 	}
 }
 
