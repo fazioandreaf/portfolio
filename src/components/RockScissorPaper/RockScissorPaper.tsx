@@ -38,35 +38,59 @@ const RockScissorPaper = () => {
 
 	return (
 		<GameCtx.Provider value={{currentUser, setCurrentUser, setError}}>
-			<div className={cn(styles['rock-scissor-paper--game-wrapper'])}>
+			<div className={styles['rock-scissor-paper--game-wrapper']}>
 				<h2>Rock Scissor Paper</h2>
-				<RockScissorPaperUser />
-				<div className={styles['rock-scissor-paper--mode']}>
-					<button
-						className={cn({['active']: versus === 'user'})}
-						onClick={() => {
-							setVersus('user');
-							handleCleanGame();
-						}}
-					>
-						Gioca Utente VS PC
-					</button>
-					<button
-						className={cn({['active']: versus === 'pc'})}
-						onClick={() => {
-							setVersus('pc');
-							handleCleanGame();
-						}}
-					>
-						Gioca PC VS PC
-					</button>
+				<div className={styles['rock-scissor-paper--main']}>
+					<RockScissorPaperUser />
+					<div className={styles['rock-scissor-paper--dived']} />
+					<div className={styles['rock-scissor-paper--game']}>
+						<div className={styles['rock-scissor-paper--versus']}>
+							<button
+								className={cn({['active']: versus === 'user'})}
+								onClick={() => {
+									setVersus('user');
+									handleCleanGame();
+								}}
+							>
+								Gioca Utente VS PC
+							</button>
+							<button
+								className={cn({['active']: versus === 'pc'})}
+								onClick={() => {
+									setVersus('pc');
+									handleCleanGame();
+								}}
+							>
+								Gioca PC VS PC
+							</button>
+						</div>
+						<div className={styles['rock-scissor-paper--mode']}>
+							<button
+								className={cn({['active']: mode === 'basic'})}
+								onClick={() => {
+									setMode('basic');
+									handleCleanGame();
+								}}
+							>
+								3 scelte
+							</button>
+							<button
+								className={cn({['active']: mode === 'pro'})}
+								onClick={() => {
+									setMode('pro');
+									handleCleanGame();
+								}}
+							>
+								5 scelte
+							</button>
+						</div>
+						<RockScissorPaperPlay players={players} isPC={versus === 'pc'} />
+					</div>
 				</div>
-				<RockScissorPaperPlay players={players} isPC={versus === 'pc'} />
+				{error && <span className={styles['error-label']}>{error}</span>}
 				<button type="submit" onClick={handleGame} className={styles['rock-scissor-paper--submit']}>
 					Submit
 				</button>
-
-				{error && <span className={styles['error-label']}>{error}</span>}
 			</div>
 		</GameCtx.Provider>
 	);

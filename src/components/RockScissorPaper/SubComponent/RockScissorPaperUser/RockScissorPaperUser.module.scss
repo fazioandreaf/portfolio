@@ -1,0 +1,16 @@
+.rspu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &--info-user {
+        font-size: 14px;
+    }
+
+}
+.rspu--label,
+.rspu--input-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}

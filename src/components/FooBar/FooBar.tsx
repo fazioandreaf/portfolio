@@ -1,4 +1,5 @@
 import React, {useCallback, useState} from 'react';
+import cn from 'classnames';
 
 import styles from './FooBar.module.scss';
 
@@ -30,7 +31,9 @@ const FooBar = () => {
 
 	return (
 		<div className={styles['foobar']}>
-			<button onClick={handleFooBar}>Genera numeri</button>
+			<button onClick={handleFooBar} className={cn({['d-none']: !!result.length})}>
+				Genera numeri
+			</button>
 			{!!result.length && (
 				<div className={styles['foobar__results-container']}>
 					{result.map((element, index) => (

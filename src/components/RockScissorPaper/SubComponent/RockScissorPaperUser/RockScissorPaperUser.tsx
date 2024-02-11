@@ -2,6 +2,8 @@ import React, {useState, useRef, useContext} from 'react';
 
 import GameCtx from 'baseComponents/RockScissorPaper/context';
 
+import styles from './RockScissorPaperUser.module.scss';
+
 const RockScissorPaperUser = () => {
 	const context = useContext(GameCtx);
 	const [loading, setLoading] = useState(true);
@@ -38,24 +40,25 @@ const RockScissorPaperUser = () => {
 	};
 
 	return (
-		<>
-			<input
-				type="text"
-				placeholder="Inserisci il tuo nome utente per non perdere i tuoi risultati"
-				ref={userText}
-			/>
-			<button
-				onClick={() => {
-					if (!!userText?.current?.value) {
-						handleGetUser(userText.current.value);
-					}
-				}}
-			>
-				Iscriviti
-			</button>
+		<div className={styles['rspu']}>
+			<div className={styles['rspu--input-wrapper']}>
+				<label htmlFor="nameText" className={styles['rspu--label']}>
+					Inserisci il tuo nome utente per salvare il tuo score
+					<input id="nameText" type="text" ref={userText} />
+				</label>
+				<button
+					onClick={() => {
+						if (!!userText?.current?.value) {
+							handleGetUser(userText.current.value);
+						}
+					}}
+				>
+					Iscriviti
+				</button>
+			</div>
 
 			{loading && context.currentUser && (
-				<div>
+				<div className={styles['rspu--info-user']}>
 					<span>Nome utente: {context.currentUser?.name}</span>
 					<br />
 					<span>Vittorie utente: {context.currentUser?.user_wins}</span>
@@ -65,7 +68,7 @@ const RockScissorPaperUser = () => {
 				</div>
 			)}
 			{!loading && <span>Loading</span>}
-		</>
+		</div>
 	);
 };
 

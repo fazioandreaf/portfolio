@@ -20,15 +20,23 @@ const BASIC_PLAYERS: IPlayer[] = [
 const PRO_PLAYERS: IPlayer[] = [
 	{
 		name: 'Rock',
-		weakTo: ['Paper'],
+		weakTo: ['Paper', 'Spock'],
 	},
 	{
 		name: 'Paper',
-		weakTo: ['Scissor'],
+		weakTo: ['Scissor', 'Lizard'],
 	},
 	{
 		name: 'Scissor',
-		weakTo: ['Rock'],
+		weakTo: ['Rock', 'Spock'],
+	},
+	{
+		name: 'Lizard',
+		weakTo: ['Scissor', 'Rock'],
+	},
+	{
+		name: 'Spock',
+		weakTo: ['Paper', 'Lizard'],
 	},
 ];
 
